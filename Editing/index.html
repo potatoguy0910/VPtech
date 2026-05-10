@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Editing — VPtech</title>
+  <meta name="description" content="Cinematic video editing services by VPtech — brand films, social reels, and long-form content." />
+  <link rel="icon" type="image/png" href="../assets/images/logo0.png">  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .service-hero-orb { background: radial-gradient(circle, rgba(201,161,74,0.1) 0%, transparent 65%); }
+    .process-section { background: var(--black-soft); padding: var(--section-pad) 0; }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 60px; }
+    .process-step { text-align: center; padding: 36px 24px; background: var(--dark-2); border: 1px solid rgba(245,245,245,0.06); border-radius: var(--radius-lg); transition: border-color var(--transition); }
+    .process-step:hover { border-color: rgba(201,161,74,0.2); }
+    .step-num { font-family: var(--font-display); font-size: 3rem; color: rgba(201,161,74,0.2); font-weight: 600; line-height: 1; margin-bottom: 16px; }
+    .step-icon { font-size: 1.8rem; margin-bottom: 16px; }
+    .process-step h4 { font-size: 1rem; color: var(--white); margin-bottom: 10px; }
+    .process-step p { font-size: 0.85rem; color: var(--gray); line-height: 1.75; }
+    @media (max-width: 900px) { .process-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .process-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="../" class="nav-logo">
+        <img class="logo-vp" src="../assets/images/logo.png" alt="VPtech Logo">
+      </a>
+      <a href="../Contact/" class="nav-cta">Get Started</a>
+      <button class="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="../">Home</a>
+    <a href="../#about">About</a>
+    <a href="../#services">Services</a>
+    <a href="../#testimonials">Testimonials</a>
+    <a href="../Contact/">Contact</a>
+    <a href="../Contact/" class="mobile-cta">Get Started</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="service-hero">
+    <div class="service-hero-orb"></div>
+    <div class="container">
+      <div class="service-hero-content">
+        <div class="section-label" style="animation: fadeSlideDown 0.8s ease both;">
+          <span class="card-icon" aria-hidden="true" style="margin:0 12px 0 0;vertical-align:middle;">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
+              <path d="M8.5 7.5h7M8.5 12h7M8.5 16.5h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M7 4.75h10c1.242 0 2.25 1.008 2.25 2.25v10c0 1.242-1.008 2.25-2.25 2.25H7c-1.242 0-2.25-1.008-2.25-2.25V7c0-1.242 1.008-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M4.75 8.25h-1M4.75 12h-1M4.75 15.75h-1M20.25 8.25h1M20.25 12h1M20.25 15.75h1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+          Video Editing
+        </div>
+        <h1 style="animation: fadeSlideUp 0.9s 0.1s ease both;">
+          Cinematic Editing<br>That <span style="color:var(--gold);font-style:italic;">Captures</span><br>Attention
+        </h1>
+        <p style="animation: fadeSlideUp 0.9s 0.25s ease both;">
+          We turn raw footage into high-impact content that commands attention — whether it's a brand film, social reel, or long-form documentary. Every cut is intentional, every frame is crafted.
+        </p>
+        <div style="animation: fadeSlideUp 0.9s 0.4s ease both; display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="../Contact/" class="btn-primary">Start a Project <span class="btn-arrow">→</span></a>
+          <a href="#projects" class="btn-outline">View Work <span class="btn-arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PROCESS -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-label reveal">Our Process</div>
+      <h2 class="section-title reveal reveal-delay-1">How We <span>Work</span></h2>
+      <div class="process-grid">
+        <div class="process-step reveal">
+          <div class="step-num">01</div>
+          <div class="step-icon" aria-hidden="true">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
+              <path d="M9 5.75h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M8 4.75h8A2.25 2.25 0 0 1 18.25 7v12A2.25 2.25 0 0 1 16 21.25H8A2.25 2.25 0 0 1 5.75 19V7A2.25 2.25 0 0 1 8 4.75Z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M8.5 10h7M8.5 13h7M8.5 16h4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h4>Brief & Vision</h4>
+          <p>We deep-dive into your brand, goals, and audience to understand the story we need to tell.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-num">02</div>
+          <div class="step-icon" aria-hidden="true">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
+              <path d="M14 10.5 20.25 6.25M14 13.5l6.25 4.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M7.5 12 20.25 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M6.75 12a2.25 2.25 0 1 0-4.5 0 2.25 2.25 0 0 0 4.5 0Z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M8.75 9.25c.7.6 1.1 1.55 1.1 2.75s-.4 2.15-1.1 2.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h4>Edit & Grade</h4>
+          <p>Raw footage is transformed through precise editing, colour grading, and motion design.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-num">03</div>
+          <div class="step-icon" aria-hidden="true">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
+              <path d="M14 5.75v9.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M14 6.25c2 .5 3.5.75 5.25.75v4c-1.75 0-3.25-.25-5.25-.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M10.25 16.25a2.25 2.25 0 1 0 0 4.5c1.243 0 2.25-1.007 2.25-2.25v-1.5c-.7-.45-1.5-.75-2.25-.75Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h4>Sound Design</h4>
+          <p>Music, SFX, and audio mixing that amplifies the emotional impact of every scene.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="step-num">04</div>
+          <div class="step-icon" aria-hidden="true">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
+              <path d="M14.5 4.75c3.6 0 5.5 1.9 5.5 5.5-3.6 7.2-8.7 10.1-13.5 10.5l-2.75-2.75C4.15 13.2 7.05 8.1 14.5 4.75Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M9.25 14.75 6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M12.75 11.25h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h4>Deliver & Revise</h4>
+          <p>Final delivery in all required formats, with dedicated revision rounds until it's perfect.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="projects-header">
+        <div class="section-label reveal">Portfolio</div>
+        <h2 class="section-title reveal reveal-delay-1">Selected <span>Work</span></h2>
+      </div>
+      <div class="projects-filters reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="brand">Brand Films</button>
+        <button class="filter-btn" data-filter="social">Social Reels</button>
+        <button class="filter-btn" data-filter="event">Event Videos</button>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card reveal" data-category="brand">
+          <div class="project-thumb thumb-video">
+            <div class="thumb-pattern"></div>
+            <div class="thumb-label">BRAND</div>
+            <div class="project-hover-overlay"><span>View Project</span></div>
+          </div>
+          <div class="project-info">
+            <h3>Apex Commerce — Brand Film</h3>
+            <p>2-minute cinematic brand story</p>
+            <span class="project-tag">Brand Film</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1" data-category="social">
+          <div class="project-thumb thumb-video" style="background: linear-gradient(135deg, #0a0a0a 0%, #12100a 100%);">
+            <div class="thumb-pattern"></div>
+            <div class="thumb-label">REEL</div>
+            <div class="project-hover-overlay"><span>View Project</span></div>
+          </div>
+          <div class="project-info">
+            <h3>Bloom Brands — Product Reel</h3>
+            <p>60-second social launch video</p>
+            <span class="project-tag">Social Reel</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2" data-category="event">
+          <div class="project-thumb thumb-video" style="background: linear-gradient(135deg, #080808 0%, #0f0b04 100%);">
+            <div class="thumb-pattern"></div>
+            <div class="thumb-label">EVENT</div>
+            <div class="project-hover-overlay"><span>View Project</span></div>
+          </div>
+          <div class="project-info">
+            <h3>Summit Conference 2024</h3>
+            <p>Full event highlight reel</p>
+            <span class="project-tag">Event Video</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="brand">
+          <div class="project-thumb thumb-video" style="background: linear-gradient(135deg, #0a0804 0%, #1a1508 100%);">
+            <div class="thumb-pattern"></div>
+            <div class="thumb-label">FILM</div>
+            <div class="project-hover-overlay"><span>View Project</span></div>
+          </div>
+          <div class="project-info">
+            <h3>Scale Labs — Promo Film</h3>
+            <p>SaaS product launch film</p>
+            <span class="project-tag">Brand Film</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1" data-category="social">
+          <div class="project-thumb thumb-video" style="background: linear-gradient(135deg, #080a08 0%, #0e130e 100%);">
+            <div class="thumb-pattern"></div>
+            <div class="thumb-label">SOCIAL</div>
+            <div class="project-hover-overlay"><span>View Project</span></div>
+          </div>
+          <div class="project-info">
+            <h3>Luminary Studio — IG Series</h3>
+            <p>4-part Instagram reel series</p>
+            <span class="project-tag">Social Reel</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2" data-category="brand">
+          <div class="project-thumb thumb-video" style="background: linear-gradient(135deg, #0c0a04 0%, #1c1808 100%);">
+            <div class="thumb-pattern"></div>
+            <div class="thumb-label">BRAND</div>
+            <div class="project-hover-overlay"><span>View Project</span></div>
+          </div>
+          <div class="project-info">
+            <h3>NovaEdge — Product Showcase</h3>
+            <p>Premium product reveal video</p>
+            <span class="project-tag">Brand Film</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="./" class="nav-logo">
+            <img class="logo-vp" src="./assets/images/logo.png" alt="VPtech Logo">VPtech
+          </a>
+          <p>A premium creative digital agency specialising in video editing, web development and intelligent AI systems.</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
+                <path d="M8 4.75h8A3.25 3.25 0 0 1 19.25 8v8A3.25 3.25 0 0 1 16 19.25H8A3.25 3.25 0 0 1 4.75 16V8A3.25 3.25 0 0 1 8 4.75Z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M12 15.25A3.25 3.25 0 1 0 12 8.75a3.25 3.25 0 0 0 0 6.5Z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M16.6 7.4h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
+                <path d="M6.5 9.75v9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M6.5 6.5h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M10.25 19.25v-6.5c0-1.657 1.093-3 2.75-3s2.75 1.343 2.75 3v6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="WhatsApp">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
+                <path d="M12 19.25a7.25 7.25 0 0 0 7.25-7.25A7.25 7.25 0 0 0 12 4.75 7.25 7.25 0 0 0 4.75 12c0 1.25.32 2.42.89 3.44l-.64 3.81 3.78-.67A7.2 7.2 0 0 0 12 19.25Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M9.25 10.5c.5 2 2.25 3.75 4.25 4.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <a href="mailto:vptech.growth@gmail.com" class="social-icon" aria-label="Email">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
+                <path d="M6.75 7.25h10.5c1.243 0 2.25 1.007 2.25 2.25v7.5c0 1.243-1.007 2.25-2.25 2.25H6.75c-1.243 0-2.25-1.007-2.25-2.25v-7.5c0-1.243 1.007-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M5.25 9l6.1 4.5c.39.29.92.29 1.3 0L18.75 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../#about">About</a></li>
+            <li><a href="../Contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../Editing/">Video Editing</a></li>
+            <li><a href="../Development/">Web Development</a></li>
+            <li><a href="../Automations/">AI Automations</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:vptech.growth@gmail.com">vptech.growth@gmail.com</a></li>
+            <li><a href="../Contact/">Get a Quote</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 VPtech. All rights reserved.</p>
+        <p>Crafted with <span>♥</span> for extraordinary brands.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>
