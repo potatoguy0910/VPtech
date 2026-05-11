@@ -52,26 +52,98 @@
   <section class="hero">
     <div class="service-hero-orb"></div>
     <div class="container">
-      <div class="service-hero-content">
-        <div class="section-label" style="animation: fadeSlideDown 0.8s ease both;">
-          <span class="card-icon" aria-hidden="true" style="margin:0 12px 0 0;vertical-align:middle;">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M8.5 7.5h7M8.5 12h7M8.5 16.5h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M7 4.75h10c1.242 0 2.25 1.008 2.25 2.25v10c0 1.242-1.008 2.25-2.25 2.25H7c-1.242 0-2.25-1.008-2.25-2.25V7c0-1.242 1.008-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M4.75 8.25h-1M4.75 12h-1M4.75 15.75h-1M20.25 8.25h1M20.25 12h1M20.25 15.75h1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </span>
-          Video Editing
+      <div class="service-hero-grid">
+        <div class="service-hero-content">
+          <div class="section-label" style="animation: fadeSlideDown 0.8s ease both;">
+            <span class="card-icon" aria-hidden="true" style="margin:0 12px 0 0;vertical-align:middle;">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
+                <path d="M8.5 7.5h7M8.5 12h7M8.5 16.5h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M7 4.75h10c1.242 0 2.25 1.008 2.25 2.25v10c0 1.242-1.008 2.25-2.25 2.25H7c-1.242 0-2.25-1.008-2.25-2.25V7c0-1.242 1.008-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M4.75 8.25h-1M4.75 12h-1M4.75 15.75h-1M20.25 8.25h1M20.25 12h1M20.25 15.75h1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </span>
+            Video Editing
+          </div>
+          <h1 style="animation: fadeSlideUp 0.9s 0.1s ease both;">
+            Cinematic Editing<br>That <span style="color:var(--gold);font-style:italic;">Captures</span><br>Attention
+          </h1>
+          <p style="animation: fadeSlideUp 0.9s 0.25s ease both;">
+            We turn raw footage into high-impact content that commands attention — whether it's a brand film, social reel, or long-form documentary. Every cut is intentional, every frame is crafted.
+          </p>
+          <div style="animation: fadeSlideUp 0.9s 0.4s ease both; display:flex; gap:16px; flex-wrap:wrap;">
+            <a href="../Contact/" class="btn-primary">Start a Project <span class="btn-arrow">→</span></a>
+            <a href="#projects" class="btn-outline">View Work <span class="btn-arrow">→</span></a>
+          </div>
         </div>
-        <h1 style="animation: fadeSlideUp 0.9s 0.1s ease both;">
-          Cinematic Editing<br>That <span style="color:var(--gold);font-style:italic;">Captures</span><br>Attention
-        </h1>
-        <p style="animation: fadeSlideUp 0.9s 0.25s ease both;">
-          We turn raw footage into high-impact content that commands attention — whether it's a brand film, social reel, or long-form documentary. Every cut is intentional, every frame is crafted.
-        </p>
-        <div style="animation: fadeSlideUp 0.9s 0.4s ease both; display:flex; gap:16px; flex-wrap:wrap;">
-          <a href="../Contact/" class="btn-primary">Start a Project <span class="btn-arrow">→</span></a>
-          <a href="#projects" class="btn-outline">View Work <span class="btn-arrow">→</span></a>
+
+        <!-- Enhanced Video Editing Visual -->
+        <div class="service-hero-visual">
+          <div class="editing-timeline-display">
+            <div class="timeline-window">
+              <div class="timeline-header">
+                <div class="timeline-controls">
+                  <div class="control play"></div>
+                  <div class="control volume"></div>
+                  <div class="timeline-scrubber"></div>
+                </div>
+                <div class="timeline-time">00:42 / 02:15</div>
+              </div>
+
+              <div class="timeline-tracks">
+                <div class="track video-track">
+                  <div class="track-label">VIDEO</div>
+                  <div class="track-clips">
+                    <div class="clip primary" style="width: 60%; left: 0%;"></div>
+                    <div class="clip secondary" style="width: 25%; left: 65%;"></div>
+                    <div class="clip transition" style="width: 10%; left: 55%;"></div>
+                  </div>
+                </div>
+
+                <div class="track audio-track">
+                  <div class="track-label">AUDIO</div>
+                  <div class="track-clips">
+                    <div class="clip audio-primary" style="width: 70%; left: 0%;"></div>
+                    <div class="clip audio-secondary" style="width: 20%; left: 75%;"></div>
+                  </div>
+                </div>
+
+                <div class="track effects-track">
+                  <div class="track-label">FX</div>
+                  <div class="track-clips">
+                    <div class="clip effect" style="width: 15%; left: 25%;"></div>
+                    <div class="clip effect" style="width: 12%; left: 50%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-playhead"></div>
+            </div>
+
+            <!-- Editing Stats -->
+            <div class="editing-stats">
+              <div class="stat-item">
+                <div class="stat-icon">🎬</div>
+                <div class="stat-text">
+                  <div class="stat-value">4K</div>
+                  <div class="stat-desc">Resolution</div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-text">
+                  <div class="stat-value">24h</div>
+                  <div class="stat-desc">Turnaround</div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-icon">🎵</div>
+                <div class="stat-text">
+                  <div class="stat-value">Pro</div>
+                  <div class="stat-desc">Audio Mix</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -13,22 +13,8 @@
   <style>
     .service-hero-orb { background: radial-gradient(circle, rgba(30,160,80,0.08) 0%, rgba(201,161,74,0.06) 50%, transparent 70%); }
 
-    /* Neural network decoration */
-    .neural-bg {
-      position: absolute;
-      top: 50%; right: 40px;
-      transform: translateY(-50%);
-      animation: fadeSlideLeft 1s 0.5s ease both;
-      opacity: 0.6;
-    }
-
-    /* Stats row */
-    .stats-row { background: var(--dark); border-top: 1px solid rgba(245,245,245,0.06); border-bottom: 1px solid rgba(245,245,245,0.06); padding: 52px 0; }
-    .stats-row-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
-    .stats-row-item .big { font-family: var(--font-display); font-size: 3rem; color: var(--gold); font-weight: 600; }
-    .stats-row-item .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gray); margin-top: 8px; }
-    @media (max-width: 900px) { .stats-row-grid { grid-template-columns: repeat(2, 1fr); } .neural-bg { display: none; } }
-    @media (max-width: 500px) { .stats-row-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 1100px) { .service-hero-visual { display: none; } }
+    @media (max-width: 900px) { .service-hero-grid { grid-template-columns: 1fr; gap: 60px; } }
 
     .node { animation: nodeGlow 3s ease-in-out infinite; }
     .node:nth-child(2) { animation-delay: 0.5s; }
@@ -75,60 +61,127 @@
   <!-- HERO -->
   <section class="hero">
     <div class="service-hero-orb"></div>
-    <div class="container" style="position:relative;">
-      <div class="service-hero-content">
-        <div class="section-label" style="animation: fadeSlideDown 0.8s ease both;">
-          <span class="card-icon" aria-hidden="true" style="margin:0 12px 0 0;vertical-align:middle;">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M12 3.75v2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M9 6.25h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M7.25 9.25h9.5c1.243 0 2.25 1.007 2.25 2.25v4.75c0 1.243-1.007 2.25-2.25 2.25h-9.5c-1.243 0-2.25-1.007-2.25-2.25V11.5c0-1.243 1.007-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M9.25 13.25h.01M14.75 13.25h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M9.25 16c.7.75 1.7 1.25 2.75 1.25S14.05 16.75 14.75 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          AI Automations
+    <div class="container">
+      <div class="service-hero-grid">
+        <div class="service-hero-content">
+          <div class="section-label" style="animation: fadeSlideDown 0.8s ease both;">
+            <span class="card-icon" aria-hidden="true" style="margin:0 12px 0 0;vertical-align:middle;">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
+                <path d="M12 3.75v2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M9 6.25h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M7.25 9.25h9.5c1.243 0 2.25 1.007 2.25 2.25v4.75c0 1.243-1.007 2.25-2.25 2.25h-9.5c-1.243 0-2.25-1.007-2.25-2.25V11.5c0-1.243 1.007-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M9.25 13.25h.01M14.75 13.25h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M9.25 16c.7.75 1.7 1.25 2.75 1.25S14.05 16.75 14.75 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            AI Automations
+          </div>
+          <h1 style="animation: fadeSlideUp 0.9s 0.1s ease both;">
+            Automating Businesses<br>with <span style="color:var(--gold);font-style:italic;">Intelligent</span><br>AI Systems
+          </h1>
+          <p style="animation: fadeSlideUp 0.9s 0.25s ease both;">
+            We design and deploy AI-powered systems that handle the repetitive, the complex, and the time-consuming — so you and your team can focus on what actually matters.
+          </p>
+          <div style="animation: fadeSlideUp 0.9s 0.4s ease both; display:flex; gap:16px; flex-wrap:wrap;">
+            <a href="../Contact/" class="btn-primary">Automate My Business <span class="btn-arrow">→</span></a>
+            <a href="#solutions" class="btn-outline">See Solutions <span class="btn-arrow">→</span></a>
+          </div>
         </div>
-        <h1 style="animation: fadeSlideUp 0.9s 0.1s ease both;">
-          Automating Businesses<br>with <span style="color:var(--gold);font-style:italic;">Intelligent</span><br>AI Systems
-        </h1>
-        <p style="animation: fadeSlideUp 0.9s 0.25s ease both;">
-          We design and deploy AI-powered systems that handle the repetitive, the complex, and the time-consuming — so you and your team can focus on what actually matters.
-        </p>
-        <div style="animation: fadeSlideUp 0.9s 0.4s ease both; display:flex; gap:16px; flex-wrap:wrap;">
-          <a href="../Contact/" class="btn-primary">Automate My Business <span class="btn-arrow">→</span></a>
-          <a href="#solutions" class="btn-outline">See Solutions <span class="btn-arrow">→</span></a>
-        </div>
-      </div>
 
-      <!-- SVG Neural Network -->
-      <div class="neural-bg">
-        <svg width="340" height="340" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Lines -->
-          <line x1="60" y1="170" x2="170" y2="90" stroke="rgba(201,161,74,0.15)" stroke-width="1"/>
-          <line x1="60" y1="170" x2="170" y2="170" stroke="rgba(201,161,74,0.15)" stroke-width="1"/>
-          <line x1="60" y1="170" x2="170" y2="250" stroke="rgba(201,161,74,0.15)" stroke-width="1"/>
-          <line x1="170" y1="90" x2="280" y2="120" stroke="rgba(201,161,74,0.15)" stroke-width="1"/>
-          <line x1="170" y1="170" x2="280" y2="120" stroke="rgba(201,161,74,0.15)" stroke-width="1"/>
-          <line x1="170" y1="170" x2="280" y2="220" stroke="rgba(201,161,74,0.15)" stroke-width="1"/>
-          <line x1="170" y1="250" x2="280" y2="220" stroke="rgba(201,161,74,0.15)" stroke-width="1"/>
-          <line x1="170" y1="90" x2="170" y2="170" stroke="rgba(201,161,74,0.08)" stroke-width="1"/>
-          <line x1="170" y1="170" x2="170" y2="250" stroke="rgba(201,161,74,0.08)" stroke-width="1"/>
-          <!-- Nodes -->
-          <circle class="node" cx="60" cy="170" r="10" fill="rgba(201,161,74,0.5)"/>
-          <circle class="node" cx="170" cy="90" r="8" fill="rgba(201,161,74,0.3)"/>
-          <circle class="node" cx="170" cy="170" r="12" fill="rgba(201,161,74,0.6)"/>
-          <circle class="node" cx="170" cy="250" r="8" fill="rgba(201,161,74,0.3)"/>
-          <circle class="node" cx="280" cy="120" r="10" fill="rgba(201,161,74,0.4)"/>
-          <circle class="node" cx="280" cy="220" r="10" fill="rgba(201,161,74,0.4)"/>
-          <!-- Labels -->
-          <text x="36" y="195" fill="rgba(201,161,74,0.5)" font-size="10" font-family="monospace">INPUT</text>
-          <text x="147" y="68" fill="rgba(201,161,74,0.4)" font-size="9" font-family="monospace">PROC</text>
-          <text x="147" y="195" fill="rgba(201,161,74,0.7)" font-size="9" font-family="monospace">CORE</text>
-          <text x="147" y="270" fill="rgba(201,161,74,0.4)" font-size="9" font-family="monospace">PROC</text>
-          <text x="288" y="118" fill="rgba(201,161,74,0.5)" font-size="9" font-family="monospace">OUT</text>
-          <text x="288" y="238" fill="rgba(201,161,74,0.5)" font-size="9" font-family="monospace">OUT</text>
-        </svg>
+        <!-- Enhanced Neural Network SVG -->
+        <div class="service-hero-visual">
+          <div class="ai-network-display">
+            <svg width="380" height="300" viewBox="0 0 380 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#C9A14A;stop-opacity:0.2"/>
+                  <stop offset="100%" style="stop-color:#C9A14A;stop-opacity:0.6"/>
+                </linearGradient>
+                <filter id="aiGlow">
+                  <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <!-- Input Layer -->
+              <g class="input-layer">
+                <circle cx="60" cy="80" r="12" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" filter="url(#aiGlow)" class="node"/>
+                <circle cx="60" cy="150" r="12" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" filter="url(#aiGlow)" class="node"/>
+                <circle cx="60" cy="220" r="12" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" filter="url(#aiGlow)" class="node"/>
+                <text x="35" y="270" fill="rgba(201,161,74,0.6)" font-size="10" font-family="monospace">INPUT</text>
+              </g>
+
+              <!-- Hidden Layer 1 -->
+              <g class="hidden-layer-1">
+                <circle cx="150" cy="60" r="10" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" opacity="0.8" class="node"/>
+                <circle cx="150" cy="120" r="10" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" opacity="0.8" class="node"/>
+                <circle cx="150" cy="180" r="10" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" opacity="0.8" class="node"/>
+                <circle cx="150" cy="240" r="10" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" opacity="0.8" class="node"/>
+                <text x="135" y="270" fill="rgba(201,161,74,0.6)" font-size="9" font-family="monospace">HIDDEN</text>
+              </g>
+
+              <!-- Hidden Layer 2 -->
+              <g class="hidden-layer-2">
+                <circle cx="240" cy="90" r="10" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" opacity="0.7" class="node"/>
+                <circle cx="240" cy="150" r="12" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" filter="url(#aiGlow)" class="node"/>
+                <circle cx="240" cy="210" r="10" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" opacity="0.7" class="node"/>
+                <text x="225" y="270" fill="rgba(201,161,74,0.6)" font-size="9" font-family="monospace">CORE</text>
+              </g>
+
+              <!-- Output Layer -->
+              <g class="output-layer">
+                <circle cx="320" cy="120" r="12" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" filter="url(#aiGlow)" class="node"/>
+                <circle cx="320" cy="180" r="12" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" filter="url(#aiGlow)" class="node"/>
+                <text x="305" y="270" fill="rgba(201,161,74,0.6)" font-size="9" font-family="monospace">OUTPUT</text>
+              </g>
+
+              <!-- Connections -->
+              <g stroke="#C9A14A" stroke-width="1" opacity="0.4">
+                <!-- Input to Hidden 1 -->
+                <line x1="72" y1="80" x2="140" y2="60"/>
+                <line x1="72" y1="80" x2="140" y2="120"/>
+                <line x1="72" y1="150" x2="140" y2="120"/>
+                <line x1="72" y1="150" x2="140" y2="180"/>
+                <line x1="72" y1="220" x2="140" y2="180"/>
+                <line x1="72" y1="220" x2="140" y2="240"/>
+
+                <!-- Hidden 1 to Hidden 2 -->
+                <line x1="160" y1="60" x2="230" y2="90"/>
+                <line x1="160" y1="120" x2="230" y2="90"/>
+                <line x1="160" y1="120" x2="230" y2="150"/>
+                <line x1="160" y1="180" x2="230" y2="150"/>
+                <line x1="160" y1="180" x2="230" y2="210"/>
+                <line x1="160" y1="240" x2="230" y2="210"/>
+
+                <!-- Hidden 2 to Output -->
+                <line x1="250" y1="90" x2="308" y2="120"/>
+                <line x1="250" y1="150" x2="308" y2="120"/>
+                <line x1="250" y1="150" x2="308" y2="180"/>
+                <line x1="250" y1="210" x2="308" y2="180"/>
+              </g>
+
+              <!-- Data flow particles -->
+              <circle cx="100" cy="100" r="2" fill="#C9A14A" opacity="0.6" class="data-particle"/>
+              <circle cx="200" cy="140" r="1.5" fill="#C9A14A" opacity="0.5" class="data-particle"/>
+              <circle cx="280" cy="160" r="2" fill="#C9A14A" opacity="0.7" class="data-particle"/>
+            </svg>
+
+            <!-- AI Metrics Display -->
+            <div class="ai-metrics">
+              <div class="metric">
+                <div class="metric-value">98%</div>
+                <div class="metric-label">Accuracy</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">24/7</div>
+                <div class="metric-label">Uptime</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

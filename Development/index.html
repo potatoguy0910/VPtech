@@ -29,33 +29,8 @@
     .feature-item h4 { font-size: 1.1rem; color: var(--white); margin-bottom: 10px; }
     .feature-item p { font-size: 0.88rem; color: var(--gray); line-height: 1.8; }
 
-    /* Code animation element */
-    .code-float {
-      position: absolute;
-      top: 50%; right: 60px;
-      transform: translateY(-50%);
-      background: rgba(17,17,17,0.8);
-      border: 1px solid rgba(201,161,74,0.15);
-      border-radius: var(--radius-lg);
-      padding: 28px 32px;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      line-height: 2;
-      backdrop-filter: blur(20px);
-      animation: fadeSlideLeft 1s 0.5s ease both;
-      max-width: 340px;
-    }
-    .code-line { display: block; }
-    .c-gold { color: var(--gold); }
-    .c-gray { color: var(--gray-dark); }
-    .c-white { color: var(--gray); }
-    .c-green { color: #6dbf7e; }
-    .c-blue { color: #7eb8f7; }
-    .cursor { display: inline-block; width: 2px; height: 1em; background: var(--gold); animation: blink 1s steps(1) infinite; vertical-align: text-bottom; margin-left: 2px; }
-    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-
-    @media (max-width: 1100px) { .code-float { display: none; } }
-    @media (max-width: 900px) { .features-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 1100px) { .service-hero-visual { display: none; } }
+    @media (max-width: 900px) { .service-hero-grid { grid-template-columns: 1fr; gap: 60px; } }
   </style>
 </head>
 <body>
@@ -83,9 +58,10 @@
   <!-- HERO -->
   <section class="hero">
     <div class="service-hero-orb"></div>
-    <div class="container" style="position:relative;">
-      <div class="service-hero-content">
-        <div class="section-label" style="animation: fadeSlideDown 0.8s ease both;">
+    <div class="container">
+      <div class="service-hero-grid">
+        <div class="service-hero-content">
+          <div class="section-label" style="animation: fadeSlideDown 0.8s ease both;">
             <span class="card-icon" aria-hidden="true" style="margin:0 12px 0 0;vertical-align:middle;">
               <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
                 <path d="M6.5 7.25h11c1.243 0 2.25 1.007 2.25 2.25v6c0 1.243-1.007 2.25-2.25 2.25h-11c-1.243 0-2.25-1.007-2.25-2.25v-6c0-1.243 1.007-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
@@ -94,28 +70,63 @@
               </svg>
             </span>
             Web Development
+          </div>
+          <h1 style="animation: fadeSlideUp 0.9s 0.1s ease both;">
+            Modern Websites<br>Built for <span style="color:var(--gold);font-style:italic;">Performance</span>
+          </h1>
+          <p style="animation: fadeSlideUp 0.9s 0.25s ease both;">
+            We engineer stunning, high-performance digital experiences that convert visitors into customers. From agency sites to full SaaS products — built to scale.
+          </p>
+          <div style="animation: fadeSlideUp 0.9s 0.4s ease both; display:flex; gap:16px; flex-wrap:wrap;">
+            <a href="../Contact/" class="btn-primary">Build My Site <span class="btn-arrow">→</span></a>
+            <a href="#projects" class="btn-outline">View Work <span class="btn-arrow">→</span></a>
+          </div>
         </div>
-        <h1 style="animation: fadeSlideUp 0.9s 0.1s ease both;">
-          Modern Websites<br>Built for <span style="color:var(--gold);font-style:italic;">Performance</span>
-        </h1>
-        <p style="animation: fadeSlideUp 0.9s 0.25s ease both;">
-          We engineer stunning, high-performance digital experiences that convert visitors into customers. From agency sites to full SaaS products — built to scale.
-        </p>
-        <div style="animation: fadeSlideUp 0.9s 0.4s ease both; display:flex; gap:16px; flex-wrap:wrap;">
-          <a href="../Contact/" class="btn-primary">Build My Site <span class="btn-arrow">→</span></a>
-          <a href="#projects" class="btn-outline">View Work <span class="btn-arrow">→</span></a>
-        </div>
-      </div>
 
-      <!-- Floating code block -->
-      <div class="code-float">
-        <span class="code-line"><span class="c-gray">// vptech.config.js</span></span>
-        <span class="code-line"><span class="c-gold">const</span> <span class="c-white">site</span> = {</span>
-        <span class="code-line">&nbsp;&nbsp;<span class="c-blue">performance</span>: <span class="c-green">'100/100'</span>,</span>
-        <span class="code-line">&nbsp;&nbsp;<span class="c-blue">design</span>: <span class="c-green">'premium'</span>,</span>
-        <span class="code-line">&nbsp;&nbsp;<span class="c-blue">conversion</span>: <span class="c-green">'optimised'</span>,</span>
-        <span class="code-line">&nbsp;&nbsp;<span class="c-blue">status</span>: <span class="c-green">'live'</span> <span class="cursor"></span></span>
-        <span class="code-line">};</span>
+        <!-- Enhanced Development SVG -->
+        <div class="service-hero-visual">
+          <div class="dev-code-display">
+            <div class="code-window">
+              <div class="code-header">
+                <div class="code-dots">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+                <div class="code-title">vptech-site.js</div>
+              </div>
+              <div class="code-content">
+                <div class="code-line"><span class="code-keyword">const</span> <span class="code-var">site</span> = <span class="code-punct">{</span></div>
+                <div class="code-line indent"><span class="code-prop">performance</span>: <span class="code-string">'100/100'</span>,</div>
+                <div class="code-line indent"><span class="code-prop">design</span>: <span class="code-string">'premium'</span>,</div>
+                <div class="code-line indent"><span class="code-prop">conversion</span>: <span class="code-string">'optimized'</span>,</div>
+                <div class="code-line indent"><span class="code-prop">status</span>: <span class="code-string">'live'</span> <span class="code-cursor"></span></div>
+                <div class="code-line"><span class="code-punct">};</span></div>
+              </div>
+            </div>
+
+            <!-- Floating tech icons -->
+            <div class="floating-tech-icons">
+              <div class="tech-icon react">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 10.11c1.03 0 1.87.84 1.87 1.89 0 1-.84 1.85-1.87 1.85S10.13 13 10.13 12c0-1.05.84-1.89 1.87-1.89zM7.37 12c0-1.63.66-3.11 1.73-4.19L6.34 5.64c-1.21 1.75-1.95 3.91-1.95 6.36s.74 4.61 1.95 6.36l2.76-2.17c-1.07-1.08-1.73-2.56-1.73-4.19zm9.26 0c0 1.63-.66 3.11-1.73 4.19l2.76 2.17c1.21-1.75 1.95-3.91 1.95-6.36s-.74-4.61-1.95-6.36l-2.76 2.17c1.07 1.08 1.73 2.56 1.73 4.19z" stroke="#61DAFB" stroke-width="1.5"/>
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#61DAFB" opacity="0.3"/>
+                </svg>
+              </div>
+              <div class="tech-icon node">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#339933" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div class="tech-icon typescript">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="#3178C6" stroke-width="1.5"/>
+                  <text x="12" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3178C6">TS</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

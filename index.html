@@ -49,37 +49,115 @@
     <div class="hero-orb hero-orb-1"></div>
     <div class="hero-orb hero-orb-2"></div>
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          Premium Digital Agency
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Premium Digital Agency
+          </div>
+          <h1>
+            Building Digital<br>
+            <span class="gold-word">Experiences</span><br>
+            That <span class="gold-word">Stand Out</span>
+          </h1>
+          <p class="hero-sub">
+            We craft cinematic video content, high-performance websites and intelligent AI automations — all designed to elevate your brand above the noise.
+          </p>
+          <div class="hero-actions">
+            <a href="#services" class="btn-primary">View Services <span class="btn-arrow">→</span></a>
+            <a href="./Contact/" class="btn-outline">Contact Us <span class="btn-arrow">→</span></a>
+          </div>
         </div>
-        <h1>
-          Building Digital<br>
-          <span class="gold-word">Experiences</span><br>
-          That <span class="gold-word">Stand Out</span>
-        </h1>
-        <p class="hero-sub">
-          We craft cinematic video content, high-performance websites and intelligent AI automations — all designed to elevate your brand above the noise.
-        </p>
-        <div class="hero-actions">
-          <a href="#services" class="btn-primary">View Services <span class="btn-arrow">→</span></a>
-          <a href="./Contact/" class="btn-outline">Contact Us <span class="btn-arrow">→</span></a>
-        </div>
-      </div>
 
-      <div class="hero-stats">
-        <div class="hero-stat-card">
-          <div class="hero-stat-num" data-target="50" data-suffix="+">0+</div>
-          <div class="hero-stat-label">Projects Done</div>
-        </div>
-        <div class="hero-stat-card">
-          <div class="hero-stat-num" data-target="40" data-suffix="+">0+</div>
-          <div class="hero-stat-label">Happy Clients</div>
-        </div>
-        <div class="hero-stat-card">
-          <div class="hero-stat-num" data-target="4.9" data-suffix="★">0★</div>
-          <div class="hero-stat-label">Avg. Rating</div>
+        <div class="hero-visual">
+          <div class="hero-stats">
+            <div class="hero-stat-card">
+              <div class="hero-stat-num" data-target="50" data-suffix="+">0+</div>
+              <div class="hero-stat-label">Projects Done</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="hero-stat-num" data-target="40" data-suffix="+">0+</div>
+              <div class="hero-stat-label">Happy Clients</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="hero-stat-num" data-target="4.9" data-suffix="★">0★</div>
+              <div class="hero-stat-label">Avg. Rating</div>
+            </div>
+          </div>
+
+          <!-- Enhanced SVG Illustration -->
+          <div class="hero-svg-container">
+            <svg class="hero-svg" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Background geometric shapes -->
+              <defs>
+                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#C9A14A;stop-opacity:0.1"/>
+                  <stop offset="100%" style="stop-color:#C9A14A;stop-opacity:0.3"/>
+                </linearGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <!-- Central hub -->
+              <circle cx="200" cy="150" r="25" fill="url(#goldGrad)" stroke="#C9A14A" stroke-width="2" filter="url(#glow)"/>
+              <circle cx="200" cy="150" r="8" fill="#C9A14A" opacity="0.8"/>
+
+              <!-- Connecting lines and nodes -->
+              <g stroke="#C9A14A" stroke-width="1.5" opacity="0.6">
+                <!-- Video editing node -->
+                <line x1="200" y1="150" x2="120" y2="80"/>
+                <circle cx="120" cy="80" r="12" fill="url(#goldGrad)" stroke="#C9A14A" stroke-width="1"/>
+                <circle cx="120" cy="80" r="4" fill="#C9A14A" opacity="0.7"/>
+
+                <!-- Web development node -->
+                <line x1="200" y1="150" x2="280" y2="80"/>
+                <circle cx="280" cy="80" r="12" fill="url(#goldGrad)" stroke="#C9A14A" stroke-width="1"/>
+                <circle cx="280" cy="80" r="4" fill="#C9A14A" opacity="0.7"/>
+
+                <!-- AI automation node -->
+                <line x1="200" y1="150" x2="120" y2="220"/>
+                <circle cx="120" cy="220" r="12" fill="url(#goldGrad)" stroke="#C9A14A" stroke-width="1"/>
+                <circle cx="120" cy="220" r="4" fill="#C9A14A" opacity="0.7"/>
+
+                <!-- Analytics node -->
+                <line x1="200" y1="150" x2="280" y2="220"/>
+                <circle cx="280" cy="220" r="12" fill="url(#goldGrad)" stroke="#C9A14A" stroke-width="1"/>
+                <circle cx="280" cy="220" r="4" fill="#C9A14A" opacity="0.7"/>
+              </g>
+
+              <!-- Service icons -->
+              <g fill="#C9A14A" opacity="0.8">
+                <!-- Video camera icon -->
+                <rect x="108" y="68" width="6" height="4" rx="1"/>
+                <circle cx="111" cy="72" r="2" fill="none" stroke="#C9A14A" stroke-width="1"/>
+                <rect x="106" y="74" width="10" height="1" rx="0.5"/>
+
+                <!-- Code brackets -->
+                <text x="275" y="85" font-family="monospace" font-size="8" fill="#C9A14A">&lt;/&gt;</text>
+
+                <!-- AI brain icon -->
+                <circle cx="120" cy="220" r="6" fill="none" stroke="#C9A14A" stroke-width="1"/>
+                <path d="M114 216 Q120 212 126 216" stroke="#C9A14A" stroke-width="1" fill="none"/>
+                <circle cx="117" cy="218" r="1" fill="#C9A14A"/>
+                <circle cx="123" cy="218" r="1" fill="#C9A14A"/>
+
+                <!-- Chart icon -->
+                <path d="M275 215 L280 215 L280 220 L285 220" stroke="#C9A14A" stroke-width="1" fill="none"/>
+                <line x1="275" y1="220" x2="285" y2="215" stroke="#C9A14A" stroke-width="1"/>
+              </g>
+
+              <!-- Floating particles -->
+              <circle cx="80" cy="60" r="2" fill="#C9A14A" opacity="0.4"/>
+              <circle cx="320" cy="40" r="1.5" fill="#C9A14A" opacity="0.3"/>
+              <circle cx="60" cy="240" r="1" fill="#C9A14A" opacity="0.5"/>
+              <circle cx="340" cy="260" r="2" fill="#C9A14A" opacity="0.4"/>
+            </svg>
+          </div>
         </div>
       </div>
     </div>
