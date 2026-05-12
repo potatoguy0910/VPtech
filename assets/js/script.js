@@ -79,19 +79,6 @@ function initScrollReveal() {
   elements.forEach(el => observer.observe(el));
 }
 
-// ── Active Nav Links ──
-function initActiveLinks() {
-  const currentPath = window.location.pathname;
-  document.querySelectorAll('.nav-link').forEach(link => {
-    const href = link.getAttribute('href');
-    if (!href) return;
-    // Normalize
-    const linkPath = new URL(href, window.location.href).pathname;
-    if (currentPath === linkPath || currentPath.startsWith(linkPath) && linkPath !== '/') {
-      link.classList.add('active');
-    }
-  });
-}
 
 // ── Testimonials Slider ──
 function initTestimonials() {

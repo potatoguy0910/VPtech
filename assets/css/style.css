@@ -514,6 +514,7 @@ img {
 
 .about-visual {
   position: relative;
+  height: 100%;
 }
 
 .about-card-stack {
