@@ -684,7 +684,7 @@ img {
   position: relative;
   overflow: hidden;
   transition: var(--transition);
-  cursor: default;
+  cursor: pointer;
 }
 
 .service-card::before {
@@ -1133,6 +1133,7 @@ img {
 
 /* ── Page Hero (inner pages) ── */
 .page-hero {
+  zoom: 75%;
   padding: 160px 0 100px;
   position: relative;
   overflow: hidden;
