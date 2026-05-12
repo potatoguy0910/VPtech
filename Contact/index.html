@@ -4,275 +4,258 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — VPtech</title>
-  <meta name="description" content="Get in touch with VPtech — start your premium digital project today." />
-  <link rel="icon" type="image/png" href="../assets/images/logo0.png">  
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <meta name="description" content="Get in touch with VPtech — start a project, ask a question, or book a call." />
   <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="../" class="nav-logo">
-        <img class="logo-vp" src="../assets/images/logo.png" alt="VPtech Logo">
-      </a>
-      <button class="nav-hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+<canvas id="particles-canvas"></canvas>
 
-  <div class="mobile-menu">
-    <a href="../">Home</a>
-    <a href="../#about">About</a>
-    <a href="../#services">Services</a>
-    <a href="../#testimonials">Testimonials</a>
-    <a href="../Contact/" class="active">Contact</a>
-    <a href="../Contact/" class="mobile-cta">Get Started</a>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="../" class="nav-logo"><img src="../assets/images/logo.svg" alt="VPtech" /></a>
+    <ul class="nav-links">
+      <li><a href="../" class="nav-link">Home</a></li>
+      <li><a href="../#about" class="nav-link">About</a></li>
+      <li><a href="../#services" class="nav-link">Services</a></li>
+      <li><a href="../#testimonials" class="nav-link">Testimonials</a></li>
+      <li><a href="../Contact/" class="nav-link active">Contact</a></li>
+    </ul>
+    <a href="../Contact/" class="btn btn-primary nav-cta">Get Started</a>
+    <button class="hamburger"><span></span><span></span><span></span></button>
   </div>
+</nav>
+<div class="mobile-nav">
+  <a href="../" class="mobile-nav-link">Home</a>
+  <a href="../#about" class="mobile-nav-link">About</a>
+  <a href="../#services" class="mobile-nav-link">Services</a>
+  <a href="../#testimonials" class="mobile-nav-link">Testimonials</a>
+  <a href="../Contact/" class="mobile-nav-link">Contact</a>
+</div>
 
-  <!-- CONTACT HERO -->
-  <section class="hero">
-    <canvas id="particles" class="particles-canvas" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
+<!-- PAGE HERO -->
+<section class="page-hero" style="background-color:var(--black);">
+  <div class="bg-glow bg-glow-gold" style="width:700px;height:500px;top:-100px;left:50%;transform:translateX(-50%);"></div>
+  <div class="hero-grid" style="position:absolute;inset:0;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="hero-badge" style="margin:0 auto 28px;opacity:1;animation:none;">
+      <span class="hero-badge-dot"></span>
+      Let's Talk
+    </div>
+    <h1 class="page-hero-title">
+      Start Your <span style="color:var(--gold)">Project</span><br>Today.
+    </h1>
+    <p class="page-hero-sub">Whether you have a clear vision or just a spark of an idea — we're here to help you build something remarkable.</p>
+  </div>
+</section>
 
-    <!-- Background grid -->
-    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(201,161,74,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,161,74,0.04) 1px,transparent 1px);background-size:70px 70px;pointer-events:none;"></div>
+<!-- CONTACT MAIN -->
+<section class="section" style="background:var(--dark);padding-top:60px;">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Info Cards -->
+      <div class="contact-info reveal">
+        <div style="margin-bottom:32px;">
+          <div class="section-label">Get in Touch</div>
+          <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.4rem);">We'd Love to<br>Hear From <span>You.</span></h2>
+          <p class="section-subtitle">Tell us about your project and we'll get back to you within 24 hours.</p>
+        </div>
 
-    <div class="container" style="position:relative;z-index:2;width:100%;">
-      <div class="contact-hero-grid">
-
-        <!-- Left: Info -->
-        <div class="contact-visual">
-          <div class="contact-orb"></div>
-          <div class="contact-visual-inner">
-            <div class="section-label" style="animation: fadeSlideDown 0.8s ease both;">
-              Let's Connect
-            </div>
-            <h2 style="animation: fadeSlideUp 0.9s 0.1s ease both;">
-              Start Something<br><span style="color:var(--gold);font-style:italic;">Extraordinary</span>
-            </h2>
-            <p style="animation: fadeSlideUp 0.9s 0.25s ease both;">
-              Tell us about your vision and we'll craft a premium digital solution that exceeds your expectations. We respond within 24 hours.
-            </p>
-
-            <div class="contact-info-items" style="animation: fadeSlideUp 0.9s 0.4s ease both;">
-              <div class="contact-info-item">
-                <div class="contact-info-icon" aria-hidden="true">
-                  <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                    <path d="M6.75 7.25h10.5c1.243 0 2.25 1.007 2.25 2.25v7.5c0 1.243-1.007 2.25-2.25 2.25H6.75c-1.243 0-2.25-1.007-2.25-2.25v-7.5c0-1.243 1.007-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M5.25 9l6.1 4.5c.39.29.92.29 1.3 0L18.75 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div class="contact-info-text">
-                  <strong>Email</strong>
-                  vptech.growth@gmail.com
-                </div>
-              </div>
-              <div class="contact-info-item">
-                <div class="contact-info-icon" aria-hidden="true">
-                  <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                    <path d="M7.25 8.25h9.5c1.243 0 2.25 1.007 2.25 2.25v5c0 1.243-1.007 2.25-2.25 2.25H11l-3.75 2v-2H7.25c-1.243 0-2.25-1.007-2.25-2.25v-5c0-1.243 1.007-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                    <path d="M8.5 11.25h7M8.5 14h4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                  </svg>
-                </div>
-                <div class="contact-info-text">
-                  <strong>WhatsApp</strong>
-                  +1 (555) 000-0000
-                </div>
-              </div>
-              <div class="contact-info-item">
-                <div class="contact-info-icon" aria-hidden="true">
-                  <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 6.25a7.75 7.75 0 1 0 0 15.5 7.75 7.75 0 0 0 0-15.5Z" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M12 10v4l2.5 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M9 4.75h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                  </svg>
-                </div>
-                <div class="contact-info-text">
-                  <strong>Response Time</strong>
-                  Within 24 hours
-                </div>
-              </div>
-            </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📧</div>
+          <div>
+            <div class="contact-card-title">Email Us</div>
+            <div class="contact-card-val">hello@vptech.agency</div>
           </div>
         </div>
 
-        <!-- Right: Form -->
-        <div style="animation: fadeSlideUp 0.9s 0.2s ease both;">
-          <div class="contact-form-card">
-            <h3>Send a Message</h3>
-            <p class="form-sub">Fill in the details below and we'll get back to you promptly.</p>
+        <div class="contact-card">
+          <div class="contact-card-icon">💬</div>
+          <div>
+            <div class="contact-card-title">WhatsApp</div>
+            <div class="contact-card-val">+91 00000 00000</div>
+          </div>
+        </div>
 
-            <form class="contact-form" novalidate>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="name">Full Name</label>
-                  <input type="text" id="name" name="name" placeholder="Your name" required />
-                </div>
-                <div class="form-group">
-                  <label for="email">Email Address</label>
-                  <input type="email" id="email" name="email" placeholder="your@email.com" required />
-                </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📍</div>
+          <div>
+            <div class="contact-card-title">Location</div>
+            <div class="contact-card-val">Remote — Worldwide</div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card-icon">⏱️</div>
+          <div>
+            <div class="contact-card-title">Response Time</div>
+            <div class="contact-card-val">Within 24 hours</div>
+          </div>
+        </div>
+
+        <!-- Social links -->
+        <div style="padding:24px;border:var(--border-white);border-radius:10px;background:var(--dark-2);">
+          <div class="footer-col-title" style="margin-bottom:16px;">Follow Us</div>
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter/X">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75,15.02 15.5,12 9.75,8.98" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="reveal reveal-delay-2">
+        <div class="contact-form-wrap">
+          <h3 style="font-family:var(--font-heading);font-size:1.3rem;font-weight:700;color:var(--white);margin-bottom:8px;">Send a Message</h3>
+          <p style="font-size:0.82rem;color:var(--white-dim);margin-bottom:32px;">Fill out the form below and we'll be in touch shortly.</p>
+
+          <form class="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="name">Your Name</label>
+                <input class="form-input" type="text" id="name" name="name" placeholder="John Doe" required />
               </div>
               <div class="form-group">
-                <label for="service">Service Needed</label>
-                <select id="service" name="service" required>
-                  <option value="" disabled selected>Select a service</option>
-                  <option value="video">Video Editing</option>
-                  <option value="web">Web Development</option>
-                  <option value="ai">AI Automations</option>
-                  <option value="multiple">Multiple Services</option>
-                  <option value="other">Other / Not Sure</option>
-                </select>
+                <label class="form-label" for="email">Email Address</label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="hello@email.com" required />
               </div>
-              <div class="form-group">
-                <label for="message">Project Details</label>
-                <textarea id="message" name="message" placeholder="Tell us about your project, timeline, and goals..." required></textarea>
-              </div>
-              <button type="submit" class="btn-primary form-submit">
-                Send Message <span class="btn-arrow">→</span>
-              </button>
-            </form>
-          </div>
-        </div>
+            </div>
 
+            <div class="form-group">
+              <label class="form-label" for="service">Service Interested In</label>
+              <select class="form-select" id="service" name="service">
+                <option value="" disabled selected>Select a service</option>
+                <option value="video">Video Editing</option>
+                <option value="web">Web Development</option>
+                <option value="ai">AI Automations</option>
+                <option value="all">Multiple Services</option>
+                <option value="other">Other / Not Sure</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="budget">Budget Range</label>
+              <select class="form-select" id="budget" name="budget">
+                <option value="" disabled selected>Select a budget range</option>
+                <option value="<1k">Under ₹50,000</option>
+                <option value="1-5k">₹50,000 – ₹2,00,000</option>
+                <option value="5-15k">₹2,00,000 – ₹5,00,000</option>
+                <option value="15k+">₹5,00,000+</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Your Message</label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="Tell us about your project, goals, and timeline..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:16px;">
+              Send Message
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="divider"></div>
+<!-- SERVICES QUICK LINKS -->
+<section class="section" style="background:var(--black);padding-top:0;padding-bottom:80px;">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:44px;">
+      <h3 style="font-family:var(--font-heading);font-size:1.4rem;font-weight:700;color:var(--white);">Or Explore Our <span style="color:var(--gold)">Services</span></h3>
+    </div>
+    <div class="services-grid">
+      <a href="../Editing/" class="service-card" style="cursor:pointer;display:block;text-decoration:none;">
+        <div class="service-num">01</div>
+        <div class="service-icon-wrap">🎬</div>
+        <h3 class="service-title">Video Editing</h3>
+        <p class="service-desc">Cinematic edits, reels, commercials, and motion graphics.</p>
+        <span class="service-link">
+          Learn More
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+      <a href="../Development/" class="service-card" style="cursor:pointer;display:block;text-decoration:none;">
+        <div class="service-num">02</div>
+        <div class="service-icon-wrap">💻</div>
+        <h3 class="service-title">Web Development</h3>
+        <p class="service-desc">Responsive websites, modern UI/UX, and fast performance.</p>
+        <span class="service-link">
+          Learn More
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+      <a href="../Automations/" class="service-card" style="cursor:pointer;display:block;text-decoration:none;">
+        <div class="service-num">03</div>
+        <div class="service-icon-wrap">🤖</div>
+        <h3 class="service-title">AI Automations</h3>
+        <p class="service-desc">Workflow automation, AI integrations, and business systems.</p>
+        <span class="service-link">
+          Learn More
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
 
-  <!-- SOCIAL LINKS SECTION -->
-  <section class="social-section">
-    <div class="container">
-      <div class="social-section-header">
-        <div class="section-label reveal" style="justify-content:center;">Find Us Online</div>
-        <h2 class="section-title reveal reveal-delay-1" style="text-align:center;">Connect <span>Anywhere</span></h2>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><img src="../assets/images/logo.svg" alt="VPtech" /></div>
+        <p class="footer-desc">Premium digital agency — video editing, web development, and AI automations for ambitious brands.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" class="social-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
       </div>
-      <div class="social-cards">
-
-        <a href="#" class="social-card reveal">
-          <div class="social-card-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M8 4.75h8A3.25 3.25 0 0 1 19.25 8v8A3.25 3.25 0 0 1 16 19.25H8A3.25 3.25 0 0 1 4.75 16V8A3.25 3.25 0 0 1 8 4.75Z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M12 15.25A3.25 3.25 0 1 0 12 8.75a3.25 3.25 0 0 0 0 6.5Z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M16.6 7.4h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h4>Instagram</h4>
-          <p>@vptech.growth</p>
-        </a>
-
-        <a href="#" class="social-card reveal reveal-delay-1">
-          <div class="social-card-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M10.25 7.75V7a2.25 2.25 0 0 1 2.25-2.25h0A2.25 2.25 0 0 1 14.75 7v.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M6.75 7.75h10.5c1.243 0 2.25 1.007 2.25 2.25v7.5c0 1.243-1.007 2.25-2.25 2.25H6.75c-1.243 0-2.25-1.007-2.25-2.25V10c0-1.243 1.007-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M4.5 12.5c2.5 1.5 5 2.25 7.5 2.25s5-.75 7.5-2.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h4>LinkedIn</h4>
-          <p>VPtech Agency</p>
-        </a>
-
-        <a href="mailto:vptech.growth@gmail.com" class="social-card reveal reveal-delay-2">
-          <div class="social-card-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M6.75 7.25h10.5c1.243 0 2.25 1.007 2.25 2.25v7.5c0 1.243-1.007 2.25-2.25 2.25H6.75c-1.243 0-2.25-1.007-2.25-2.25v-7.5c0-1.243 1.007-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M5.25 9l6.1 4.5c.39.29.92.29 1.3 0L18.75 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h4>Email</h4>
-          <p>vptech.growth@gmail.com</p>
-        </a>
-
-        <a href="#" class="social-card reveal reveal-delay-3">
-          <div class="social-card-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M12 19.25a7.25 7.25 0 0 0 7.25-7.25A7.25 7.25 0 0 0 12 4.75 7.25 7.25 0 0 0 4.75 12c0 1.25.32 2.42.89 3.44l-.64 3.81 3.78-.67A7.2 7.2 0 0 0 12 19.25Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M9.25 10.5c.5 2 2.25 3.75 4.25 4.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h4>WhatsApp</h4>
-          <p>Message Us Directly</p>
-        </a>
-
+      <div>
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links">
+          <li><a href="../Editing/" class="footer-link">Video Editing</a></li>
+          <li><a href="../Development/" class="footer-link">Web Development</a></li>
+          <li><a href="../Automations/" class="footer-link">AI Automations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Company</h4>
+        <ul class="footer-links">
+          <li><a href="../#about" class="footer-link">About</a></li>
+          <li><a href="../#testimonials" class="footer-link">Testimonials</a></li>
+          <li><a href="../Contact/" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@vptech.agency" class="footer-link">hello@vptech.agency</a></li>
+          <li><a href="#" class="footer-link">Book a Call</a></li>
+        </ul>
       </div>
     </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="./" class="nav-logo">
-            <img class="logo-vp" src="../assets/images/logo.png" alt="VPtech Logo">VPtech
-          </a>
-          <p>A premium creative digital agency specialising in video editing, web development and intelligent AI systems.</p>
-          <div class="footer-social">
-            <a href="#" class="social-icon" aria-label="Instagram">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M8 4.75h8A3.25 3.25 0 0 1 19.25 8v8A3.25 3.25 0 0 1 16 19.25H8A3.25 3.25 0 0 1 4.75 16V8A3.25 3.25 0 0 1 8 4.75Z" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M12 15.25A3.25 3.25 0 1 0 12 8.75a3.25 3.25 0 0 0 0 6.5Z" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M16.6 7.4h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-              </svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="LinkedIn">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M6.5 9.75v9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M6.5 6.5h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-                <path d="M10.25 19.25v-6.5c0-1.657 1.093-3 2.75-3s2.75 1.343 2.75 3v6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="WhatsApp">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M12 19.25a7.25 7.25 0 0 0 7.25-7.25A7.25 7.25 0 0 0 12 4.75 7.25 7.25 0 0 0 4.75 12c0 1.25.32 2.42.89 3.44l-.64 3.81 3.78-.67A7.2 7.2 0 0 0 12 19.25Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                <path d="M9.25 10.5c.5 2 2.25 3.75 4.25 4.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </a>
-            <a href="mailto:vptech.growth@gmail.com" class="social-icon" aria-label="Email">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M6.75 7.25h10.5c1.243 0 2.25 1.007 2.25 2.25v7.5c0 1.243-1.007 2.25-2.25 2.25H6.75c-1.243 0-2.25-1.007-2.25-2.25v-7.5c0-1.243 1.007-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M5.25 9l6.1 4.5c.39.29.92.29 1.3 0L18.75 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Pages</h4>
-          <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="../#about">About</a></li>
-            <li><a href="../Contact/">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="../Editing/">Video Editing</a></li>
-            <li><a href="../Development/">Web Development</a></li>
-            <li><a href="../Automations/">AI Automations</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="mailto:vptech.growth@gmail.com">vptech.growth@gmail.com</a></li>
-            <li><a href="../Contact/">Get a Quote</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2026 VPtech. All rights reserved.</p>
-        <p>Crafted with <span>♥</span> for extraordinary brands.</p>
-      </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 <span>VPtech</span>. All rights reserved.</p>
+      <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script src="../assets/js/script.js"></script>
+<script src="../assets/js/script.js"></script>
 </body>
 </html>

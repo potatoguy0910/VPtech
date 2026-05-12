@@ -3,423 +3,439 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VPtech — Digital Agency</title>
-  <meta name="description" content="VPtech is a creative digital agency specialising in video editing, web development, and AI automations." />
-  <link rel="icon" type="image/png" href="./assets/images/logo0.png">   
+  <title>VPtech — Premium Digital Agency</title>
+  <meta name="description" content="VPtech is a premium digital agency specialising in cinematic video editing, modern web development, and smart AI automations." />
+  <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
 
-  <!-- ============ NAVBAR ============ -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="./" class="nav-logo">
-        <img class="logo-vp" src="./assets/images/logo.png" alt="VPtech Logo">
-      </a>
-      <ul class="nav-links">
-        <li><a href="./" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="./Contact/">Contact</a></li>
-      </ul>
-      <a href="./Contact/" class="nav-cta">Get Started</a>
-      <button class="nav-hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+<!-- ░░ Particle Canvas ░░ -->
+<canvas id="particles-canvas"></canvas>
 
-  <!-- ============ MOBILE MENU ============ -->
-  <div class="mobile-menu">
-    <a href="./">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="./Contact/">Contact</a>
-    <a href="./Contact/" class="mobile-cta">Get Started</a>
+<!-- ══════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════ -->
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="./" class="nav-logo">
+      <img src="./assets/images/logo.png" alt="VPtech" />
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="./" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+      <li><a href="./Contact/" class="nav-link">Contact</a></li>
+    </ul>
+
+    <a href="./Contact/" class="btn btn-primary nav-cta">Get Started</a>
+
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav">
+  <a href="./" class="mobile-nav-link">Home</a>
+  <a href="#about" class="mobile-nav-link">About</a>
+  <a href="#services" class="mobile-nav-link">Services</a>
+  <a href="#testimonials" class="mobile-nav-link">Testimonials</a>
+  <a href="./Contact/" class="mobile-nav-link">Contact</a>
+</div>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-gradient"></div>
+    <div class="hero-grid"></div>
+    <!-- Glow blobs -->
+    <div class="bg-glow bg-glow-gold" style="width:700px;height:700px;top:-200px;left:-150px;"></div>
+    <div class="bg-glow bg-glow-gold" style="width:500px;height:500px;bottom:-100px;right:-100px;"></div>
   </div>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero" id="home">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-content">
-          <div class="hero-badge">
-            <span class="hero-badge-dot"></span>
-            Premium Digital Agency
-          </div>
-          <h1>
-            Building Digital<br>
-            <span class="gold-word">Experiences</span><br>
-            That <span class="gold-word">Stand Out</span>
-          </h1>
-          <p class="hero-sub">
-            We craft cinematic video content, high-performance websites and intelligent AI automations — all designed to elevate your brand above the noise.
-          </p>
-          <div class="hero-actions">
-            <a href="#services" class="btn-primary">View Services <span class="btn-arrow">→</span></a>
-            <a href="./Contact/" class="btn-outline">Contact Us <span class="btn-arrow">→</span></a>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="hero-stats">
-            <div class="hero-stat-card">
-              <div class="hero-stat-num" data-target="50" data-suffix="+">0+</div>
-              <div class="hero-stat-label">Projects Done</div>
-            </div>
-            <div class="hero-stat-card">
-              <div class="hero-stat-num" data-target="40" data-suffix="+">0+</div>
-              <div class="hero-stat-label">Happy Clients</div>
-            </div>
-            <div class="hero-stat-card">
-              <div class="hero-stat-num" data-target="4.9" data-suffix="★">0★</div>
-              <div class="hero-stat-label">Avg. Rating</div>
-            </div>
-          </div>
-
-          <!-- Enhanced SVG Illustration -->
-          <div class="hero-svg-container">
-            <svg class="hero-svg" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Background geometric shapes -->
-              <defs>
-                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#C9A14A;stop-opacity:0.1"/>
-                  <stop offset="100%" style="stop-color:#C9A14A;stop-opacity:0.3"/>
-                </linearGradient>
-                <filter id="glow">
-                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                  <feMerge>
-                    <feMergeNode in="coloredBlur"/>
-                    <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-                </filter>
-              </defs>
-
-              <!-- Central hub -->
-              <circle cx="200" cy="150" r="25" fill="url(#goldGrad)" stroke="#C9A14A" stroke-width="2" filter="url(#glow)"/>
-              <circle cx="200" cy="150" r="8" fill="#C9A14A" opacity="0.8"/>
-
-              <!-- Connecting lines and nodes -->
-              <g stroke="#C9A14A" stroke-width="1.5" opacity="0.6">
-                <!-- Video editing node -->
-                <line x1="200" y1="150" x2="120" y2="80"/>
-                <circle cx="120" cy="80" r="12" fill="url(#goldGrad)" stroke="#C9A14A" stroke-width="1"/>
-                <circle cx="120" cy="80" r="4" fill="#C9A14A" opacity="0.7"/>
-
-                <!-- Web development node -->
-                <line x1="200" y1="150" x2="280" y2="80"/>
-                <circle cx="280" cy="80" r="12" fill="url(#goldGrad)" stroke="#C9A14A" stroke-width="1"/>
-                <circle cx="280" cy="80" r="4" fill="#C9A14A" opacity="0.7"/>
-
-                <!-- AI automation node -->
-                <line x1="200" y1="150" x2="120" y2="220"/>
-                <circle cx="120" cy="220" r="12" fill="url(#goldGrad)" stroke="#C9A14A" stroke-width="1"/>
-                <circle cx="120" cy="220" r="4" fill="#C9A14A" opacity="0.7"/>
-
-                <!-- Analytics node -->
-                <line x1="200" y1="150" x2="280" y2="220"/>
-                <circle cx="280" cy="220" r="12" fill="url(#goldGrad)" stroke="#C9A14A" stroke-width="1"/>
-                <circle cx="280" cy="220" r="4" fill="#C9A14A" opacity="0.7"/>
-              </g>
-
-              <!-- Service icons -->
-              <g fill="#C9A14A" opacity="0.8">
-                <!-- Video camera icon -->
-                <rect x="108" y="68" width="6" height="4" rx="1"/>
-                <circle cx="111" cy="72" r="2" fill="none" stroke="#C9A14A" stroke-width="1"/>
-                <rect x="106" y="74" width="10" height="1" rx="0.5"/>
-
-                <!-- Code brackets -->
-                <text x="275" y="85" font-family="monospace" font-size="8" fill="#C9A14A">&lt;/&gt;</text>
-
-                <!-- AI brain icon -->
-                <circle cx="120" cy="220" r="6" fill="none" stroke="#C9A14A" stroke-width="1"/>
-                <path d="M114 216 Q120 212 126 216" stroke="#C9A14A" stroke-width="1" fill="none"/>
-                <circle cx="117" cy="218" r="1" fill="#C9A14A"/>
-                <circle cx="123" cy="218" r="1" fill="#C9A14A"/>
-
-                <!-- Chart icon -->
-                <path d="M275 215 L280 215 L280 220 L285 220" stroke="#C9A14A" stroke-width="1" fill="none"/>
-                <line x1="275" y1="220" x2="285" y2="215" stroke="#C9A14A" stroke-width="1"/>
-              </g>
-
-              <!-- Floating particles -->
-              <circle cx="80" cy="60" r="2" fill="#C9A14A" opacity="0.4"/>
-              <circle cx="320" cy="40" r="1.5" fill="#C9A14A" opacity="0.3"/>
-              <circle cx="60" cy="240" r="1" fill="#C9A14A" opacity="0.5"/>
-              <circle cx="340" cy="260" r="2" fill="#C9A14A" opacity="0.4"/>
-            </svg>
-          </div>
-        </div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Premium Digital Agency
       </div>
-    </div>
-  </section>
 
-  <div class="divider"></div>
+      <h1 class="hero-title">
+        We Build Digital<br>
+        <span class="gold-word">Experiences</span> That <br>
+        Feel <span class="gold-word">Premium.</span>
+      </h1>
 
-  <!-- ============ ABOUT ============ -->
-  <section class="about section" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-visual">
-          <div class="about-img-frame"></div>
-          <div class="about-accent-card">
-            <div class="val">2022</div>
-            <div class="lbl">Founded</div>
-          </div>
-        </div>
-        <div class="about-text">
-          <div class="section-label reveal">About VPtech</div>
-          <h2 class="section-title reveal reveal-delay-1">
-            A Creative Studio<br>Built for <span>The Future</span>
-          </h2>
-          <p class="section-sub reveal reveal-delay-2" style="margin-bottom: 28px;">
-            VPtech is a premium creative digital agency delivering exceptional results through video editing, web development and AI-powered automation — helping brands compete at the highest level.
-          </p>
-          <p class="section-sub reveal reveal-delay-2" style="font-size: 0.95rem;">
-            We don't do ordinary. Every project we take on is treated as a craft, combining technical excellence with artistic vision to deliver results that genuinely move the needle.
-          </p>
-          <div class="about-stats reveal reveal-delay-3">
-            <div class="stat-item">
-              <div class="num" data-target="50" data-suffix="+">0+</div>
-              <div class="lbl">Projects</div>
-            </div>
-            <div class="stat-item">
-              <div class="num" data-target="40" data-suffix="+">0+</div>
-              <div class="lbl">Clients</div>
-            </div>
-            <div class="stat-item">
-              <div class="num" data-target="3" data-suffix=" yrs">0 yrs</div>
-              <div class="lbl">Experience</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ============ SERVICES ============ -->
-  <section class="services section" id="services">
-    <div class="container">
-      <div class="services-header">
-        <div class="section-label reveal" style="justify-content:center;">What We Do</div>
-        <h2 class="section-title reveal reveal-delay-1">Our <span>Services</span></h2>
-        <p class="section-sub reveal reveal-delay-2">
-          Three core disciplines, one relentless standard — we deliver premium output across every medium we touch.
-        </p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <div class="card-number">01</div>
-          <span class="card-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M8.5 7.5h7M8.5 12h7M8.5 16.5h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M7 4.75h10c1.242 0 2.25 1.008 2.25 2.25v10c0 1.242-1.008 2.25-2.25 2.25H7c-1.242 0-2.25-1.008-2.25-2.25V7c0-1.242 1.008-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M4.75 8.25h-1M4.75 12h-1M4.75 15.75h-1M20.25 8.25h1M20.25 12h1M20.25 15.75h1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </span>
-          <h3>Video Editing</h3>
-          <p>Cinematic post-production that transforms raw footage into compelling brand stories, social reels, and long-form content audiences actually watch.</p>
-          <a href="./Editing/" class="card-link">Learn More →</a>
-          <div class="card-corner"></div>
-        </div>
-        <div class="service-card reveal reveal-delay-1">
-          <div class="card-number">02</div>
-          <span class="card-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M6.5 7.25h11c1.243 0 2.25 1.007 2.25 2.25v6c0 1.243-1.007 2.25-2.25 2.25h-11c-1.243 0-2.25-1.007-2.25-2.25v-6c0-1.243 1.007-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M9 20.25h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M9.25 11.1 7.5 12.75l1.75 1.65M14.75 11.1 16.5 12.75l-1.75 1.65" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <h3>Web Development</h3>
-          <p>High-performance, visually stunning websites and web applications built with modern technologies and optimised for conversions and speed.</p>
-          <a href="./Development/" class="card-link">Learn More →</a>
-          <div class="card-corner"></div>
-        </div>
-        <div class="service-card reveal reveal-delay-2">
-          <div class="card-number">03</div>
-          <span class="card-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M12 3.75v2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M9 6.25h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M7.25 9.25h9.5c1.243 0 2.25 1.007 2.25 2.25v4.75c0 1.243-1.007 2.25-2.25 2.25h-9.5c-1.243 0-2.25-1.007-2.25-2.25V11.5c0-1.243 1.007-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M9.25 13.25h.01M14.75 13.25h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M9.25 16c.7.75 1.7 1.25 2.75 1.25S14.05 16.75 14.75 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <h3>AI Automations</h3>
-          <p>Intelligent workflow systems, chatbots, and business automations that slash manual effort and scale your operations without adding headcount.</p>
-          <a href="./Automations/" class="card-link">Learn More →</a>
-          <div class="card-corner"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ============ TESTIMONIALS ============ -->
-  <section class="testimonials section" id="testimonials">
-    <div class="container">
-      <div class="testimonials-header">
-        <div class="section-label reveal">Client Words</div>
-        <h2 class="section-title reveal reveal-delay-1">What They <span>Say</span></h2>
-      </div>
-      <div class="testimonials-track">
-
-        <div class="testi-card reveal">
-          <div class="testi-stars">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          </div>
-          <p class="testi-quote">
-            VPtech redesigned our entire web presence in under three weeks. The result was leagues above what we imagined — clean, fast, and conversion-focused.
-          </p>
-          <div class="testi-author">
-            <div class="testi-avatar">AR</div>
-            <div>
-              <div class="testi-name">Alex Rivera</div>
-              <div class="testi-role">CEO, Apex Commerce</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card reveal reveal-delay-1">
-          <div class="testi-stars">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          </div>
-          <p class="testi-quote">
-            The video content they produced for our product launch genuinely blew us away. Our engagement rates tripled within the first week of posting.
-          </p>
-          <div class="testi-author">
-            <div class="testi-avatar">SN</div>
-            <div>
-              <div class="testi-name">Sofia Nakamura</div>
-              <div class="testi-role">CMO, Bloom Brands</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card reveal reveal-delay-2">
-          <div class="testi-stars">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          </div>
-          <p class="testi-quote">
-            Their AI automation system saved us 20+ hours per week on client onboarding alone. The ROI was visible from the very first month. Truly elite work.
-          </p>
-          <div class="testi-author">
-            <div class="testi-avatar">DM</div>
-            <div>
-              <div class="testi-name">Daniel Müller</div>
-              <div class="testi-role">Founder, Scale Labs</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ============ CONTACT PREVIEW ============ -->
-  <section class="contact-preview" id="contact-preview">
-    <div class="container">
-      <div class="section-label reveal" style="justify-content:center;">Let's Talk</div>
-      <h2 class="reveal reveal-delay-1">
-        Ready to Build Something<br><span style="color:var(--gold);font-style:italic;">Extraordinary?</span>
-      </h2>
-      <p class="reveal reveal-delay-2">
-        Tell us about your project and let's create something that truly stands apart from the crowd.
+      <p class="hero-desc">
+        VPtech crafts cinematic visuals, high-performance web products, and intelligent AI systems — built for brands that refuse to settle.
       </p>
-      <a href="./Contact/" class="btn-primary reveal reveal-delay-3">
-        Start a Project <span class="btn-arrow">→</span>
-      </a>
-    </div>
-  </section>
 
-  <!-- ============ FOOTER ============ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="./" class="nav-logo">
-            <img class="logo-vp" src="./assets/images/logo.png" alt="VPtech Logo">VPtech
-          </a>
-          <p>A premium creative digital agency specialising in video editing, web development and intelligent AI systems.</p>
-          <div class="footer-social">
-            <a href="#" class="social-icon" aria-label="Instagram">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M8 4.75h8A3.25 3.25 0 0 1 19.25 8v8A3.25 3.25 0 0 1 16 19.25H8A3.25 3.25 0 0 1 4.75 16V8A3.25 3.25 0 0 1 8 4.75Z" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M12 15.25A3.25 3.25 0 1 0 12 8.75a3.25 3.25 0 0 0 0 6.5Z" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M16.6 7.4h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-              </svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="LinkedIn">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M6.5 9.75v9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M6.5 6.5h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-                <path d="M10.25 19.25v-6.5c0-1.657 1.093-3 2.75-3s2.75 1.343 2.75 3v6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="WhatsApp">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M12 19.25a7.25 7.25 0 0 0 7.25-7.25A7.25 7.25 0 0 0 12 4.75 7.25 7.25 0 0 0 4.75 12c0 1.25.32 2.42.89 3.44l-.64 3.81 3.78-.67A7.2 7.2 0 0 0 12 19.25Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                <path d="M9.25 10.5c.5 2 2.25 3.75 4.25 4.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </a>
-            <a href="mailto:vptech.growth@gmail.com" class="social-icon" aria-label="Email">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M6.75 7.25h10.5c1.243 0 2.25 1.007 2.25 2.25v7.5c0 1.243-1.007 2.25-2.25 2.25H6.75c-1.243 0-2.25-1.007-2.25-2.25v-7.5c0-1.243 1.007-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M5.25 9l6.1 4.5c.39.29.92.29 1.3 0L18.75 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
+      <div class="hero-actions">
+        <a href="./Contact/" class="btn btn-primary">
+          Get Started
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="./#services" class="btn btn-outline">View Services</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span class="hero-scroll-text">Scroll</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     ABOUT
+══════════════════════════════════════ -->
+<section id="about" class="section about">
+  <!-- Glow -->
+  <div class="bg-glow bg-glow-gold" style="width:600px;height:600px;top:50%;right:-200px;transform:translateY(-50%);"></div>
+
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Visual Card -->
+      <div class="about-visual reveal">
+        <div class="about-card-stack">
+          <div class="about-card-bg"></div>
+          <div class="about-card-bg"></div>
+          <div class="about-card-inner">
+            <div class="about-logo-display">
+              <img src="assets/images/logo.svg" alt="VPtech" />
+            </div>
+
+            <div class="about-stat-grid">
+              <div class="about-stat">
+                <div class="about-stat-num">50+</div>
+                <div class="about-stat-label">Projects Delivered</div>
+              </div>
+              <div class="about-stat">
+                <div class="about-stat-num">30+</div>
+                <div class="about-stat-label">Happy Clients</div>
+              </div>
+              <div class="about-stat">
+                <div class="about-stat-num">3</div>
+                <div class="about-stat-label">Core Services</div>
+              </div>
+              <div class="about-stat">
+                <div class="about-stat-num">100%</div>
+                <div class="about-stat-label">Satisfaction</div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Pages</h4>
-          <ul>
-            <li><a href="./">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="./Contact/">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="./Editing/">Video Editing</a></li>
-            <li><a href="./Development/">Web Development</a></li>
-            <li><a href="./Automations/">AI Automations</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="mailto:vptech.growth@gmail.com">vptech.growth@gmail.com</a></li>
-            <li><a href="./Contact/">Get a Quote</a></li>
-            <li><a href="#">WhatsApp</a></li>
-          </ul>
-        </div>
       </div>
-      <div class="footer-bottom">
-        <p>© 2026 VPtech. All rights reserved.</p>
-        <p>Crafted with <span>♥</span> for extraordinary brands.</p>
+
+      <!-- Content -->
+      <div class="about-content">
+        <div class="reveal">
+          <div class="section-label">About VPtech</div>
+          <h2 class="section-title">
+            A Studio Built for<br>
+            the <span>Modern Era.</span>
+          </h2>
+          <p class="section-subtitle" style="margin-bottom:36px;">
+            VPtech is a modern digital agency founded on the principle that creativity and technology must coexist. We deliver premium digital products that move, perform, and convert.
+          </p>
+        </div>
+
+        <div class="about-feature reveal reveal-delay-1">
+          <div class="about-icon">🎬</div>
+          <div class="about-feature-text">
+            <h4>Creative Video Editing</h4>
+            <p>From cinematic edits to viral social reels — we craft visual stories that captivate and convert.</p>
+          </div>
+        </div>
+
+        <div class="about-feature reveal reveal-delay-2">
+          <div class="about-icon">💻</div>
+          <div class="about-feature-text">
+            <h4>Modern Web Development</h4>
+            <p>Pixel-perfect, blazing-fast websites built with modern tech — designed to impress, engineered to perform.</p>
+          </div>
+        </div>
+
+        <div class="about-feature reveal reveal-delay-3">
+          <div class="about-icon">🤖</div>
+          <div class="about-feature-text">
+            <h4>Smart AI Automations</h4>
+            <p>End-to-end automation systems powered by AI — reducing workload and unlocking growth at scale.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="./assets/js/script.js"></script>
+<!-- ══════════════════════════════════════
+     SERVICES
+══════════════════════════════════════ -->
+<section id="services" class="section services">
+  <div class="container">
+    <div class="services-header reveal">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Services Built to<br><span>Elevate</span> Your Brand</h2>
+      <p class="section-subtitle">Three pillars. One unified vision — to make your brand undeniable.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Video Editing -->
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">01</div>
+        <div class="service-icon-wrap">🎬</div>
+        <h3 class="service-title">Video Editing</h3>
+        <p class="service-desc">Cinematic post-production that transforms raw footage into compelling narratives. Every frame is crafted with purpose.</p>
+        <div class="service-tags">
+          <span class="service-tag">Cinematic Edits</span>
+          <span class="service-tag">Reels</span>
+          <span class="service-tag">Commercials</span>
+          <span class="service-tag">Motion</span>
+        </div>
+        <a href="./Editing/" class="service-link">
+          Learn More
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Web Development -->
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-num">02</div>
+        <div class="service-icon-wrap">💻</div>
+        <h3 class="service-title">Web Development</h3>
+        <p class="service-desc">Modern, responsive websites engineered for performance and designed for conversion. We build digital experiences that last.</p>
+        <div class="service-tags">
+          <span class="service-tag">Responsive Design</span>
+          <span class="service-tag">Modern UI/UX</span>
+          <span class="service-tag">Fast Performance</span>
+        </div>
+        <a href="./Development/" class="service-link">
+          Learn More
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- AI Automations -->
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-num">03</div>
+        <div class="service-icon-wrap">🤖</div>
+        <h3 class="service-title">AI Automations</h3>
+        <p class="service-desc">Intelligent automation systems that handle your workflows, integrate with your tools, and scale with your business.</p>
+        <div class="service-tags">
+          <span class="service-tag">Workflow Automation</span>
+          <span class="service-tag">AI Integration</span>
+          <span class="service-tag">Business Systems</span>
+        </div>
+        <a href="./Automations/" class="service-link">
+          Learn More
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════ -->
+<section id="testimonials" class="section testimonials">
+  <div class="bg-glow bg-glow-gold" style="width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <div class="section-label">Testimonials</div>
+      <h2 class="section-title">Trusted by <span>Forward-Thinking</span> Brands</h2>
+      <p class="section-subtitle">Don't take our word for it — here's what our clients say about working with VPtech.</p>
+    </div>
+
+    <div class="testimonials-track-wrap reveal">
+      <div class="testimonials-track">
+        <!-- Card 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">VPtech completely transformed our brand presence. The video edits they delivered were beyond cinematic — our engagement tripled within weeks.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AK</div>
+            <div>
+              <div class="testimonial-name">Aryan Kapoor</div>
+              <div class="testimonial-role">Founder, Luxe Ventures</div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Our new website built by VPtech is a masterpiece. Clean, fast, and incredibly premium. We've had more conversions in one month than all of last year.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SM</div>
+            <div>
+              <div class="testimonial-name">Sofia Marchetti</div>
+              <div class="testimonial-role">CMO, NovaBrand</div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">The AI automation system VPtech built saved us 40+ hours per week. It's like having an entire operations team that never sleeps.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">RN</div>
+            <div>
+              <div class="testimonial-name">Rajan Nair</div>
+              <div class="testimonial-role">CEO, ScaleOps</div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Working with VPtech is a completely different experience. They don't just deliver work — they deliver results. Premium quality, every single time.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">JP</div>
+            <div>
+              <div class="testimonial-name">Jessica Park</div>
+              <div class="testimonial-role">Director, PixelForge</div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">VPtech's reels strategy for our product launch went viral. 2M+ views in 72 hours. I can't recommend them enough — absolute professionals.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">DL</div>
+            <div>
+              <div class="testimonial-name">Dev Lakhani</div>
+              <div class="testimonial-role">Co-Founder, Apex Gear</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="testimonials-controls reveal">
+      <button class="testimonials-btn prev" aria-label="Previous">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </button>
+      <div class="testimonials-dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <button class="testimonials-btn next" aria-label="Next">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CTA BANNER
+══════════════════════════════════════ -->
+<section class="cta-banner">
+  <div class="bg-glow bg-glow-gold" style="width:800px;height:400px;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+  <div class="container">
+    <div class="cta-banner-inner reveal">
+      <div class="section-label" style="justify-content:center;">Start Today</div>
+      <h2 class="cta-banner-title">Ready to Build Something<br><span style="color:var(--gold)">Extraordinary?</span></h2>
+      <p class="cta-banner-sub">Let's talk about your vision. We'll make it a reality.</p>
+      <div class="cta-banner-actions">
+        <a href="./Contact/" class="btn btn-primary">
+          Start a Project
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="./#services" class="btn btn-outline">Explore Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div>
+        <div class="footer-logo">
+          <img src="./assets/images/logo.png" alt="VPtech" />
+        </div>
+        <p class="footer-desc">A premium digital agency crafting cinematic experiences, modern web products, and intelligent AI systems for ambitious brands.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter/X">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75,15.02 15.5,12 9.75,8.98"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links">
+          <li><a href="./Editing/" class="footer-link">Video Editing</a></li>
+          <li><a href="./Development/" class="footer-link">Web Development</a></li>
+          <li><a href="./Automations/" class="footer-link">AI Automations</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h4 class="footer-col-title">Company</h4>
+        <ul class="footer-links">
+          <li><a href="./#about" class="footer-link">About</a></li>
+          <li><a href="./#testimonials" class="footer-link">Testimonials</a></li>
+          <li><a href="./Contact/" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="footer-col-title">Get in Touch</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@vptech.agency" class="footer-link">hello@vptech.agency</a></li>
+          <li><a href="./Contact/" class="footer-link">Work With Us</a></li>
+          <li><a href="#" class="footer-link">Book a Call</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 <span>VPtech</span>. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="./assets/js/script.js"></script>
 </body>
 </html>

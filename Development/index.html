@@ -4,398 +4,364 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Web Development — VPtech</title>
-  <meta name="description" content="Premium web development services by VPtech — modern, high-performance websites and applications." />
-  <link rel="icon" type="image/png" href="../assets/images/logo0.png">  
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <meta name="description" content="Modern, responsive web development by VPtech — UI/UX, performance, and beautiful digital products." />
   <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <style>
-    .service-hero-orb { background: radial-gradient(circle, rgba(30,80,160,0.12) 0%, rgba(201,161,74,0.06) 50%, transparent 70%); }
-
-    /* Tech stack strip */
-    .tech-strip { background: var(--dark); border-top: 1px solid rgba(245,245,245,0.06); border-bottom: 1px solid rgba(245,245,245,0.06); padding: 28px 0; overflow: hidden; }
-    .tech-strip-inner { display: flex; gap: 60px; align-items: center; white-space: nowrap; animation: scrollStrip 20s linear infinite; }
-    .tech-badge { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); border: 1px solid rgba(245,245,245,0.1); padding: 8px 18px; border-radius: 100px; flex-shrink: 0; }
-    .tech-badge.gold { color: var(--gold); border-color: rgba(201,161,74,0.2); }
-    @keyframes scrollStrip { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-    /* Features */
-    .features-section { background: var(--black-soft); padding: var(--section-pad) 0; }
-    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
-    .feature-item { padding: 36px 28px; background: var(--dark-2); border: 1px solid rgba(245,245,245,0.06); border-radius: var(--radius-lg); transition: border-color var(--transition); }
-    .feature-item:hover { border-color: rgba(201,161,74,0.2); }
-    .feature-icon { font-size: 1.8rem; margin-bottom: 20px; }
-    .feature-item h4 { font-size: 1.1rem; color: var(--white); margin-bottom: 10px; }
-    .feature-item p { font-size: 0.88rem; color: var(--gray); line-height: 1.8; }
-
-    @media (max-width: 1100px) { .service-hero-visual { display: none; } }
-    @media (max-width: 900px) { .service-hero-grid { grid-template-columns: 1fr; gap: 60px; } }
+    .dev-gradient { background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(100,180,255,0.05) 0%, transparent 55%); }
+    .project-thumb-dev-1 { background: linear-gradient(135deg, #060b14, #0d1e38, #060b14); }
+    .project-thumb-dev-2 { background: linear-gradient(135deg, #0a0612, #1a0d2e, #0a0612); }
+    .project-thumb-dev-3 { background: linear-gradient(135deg, #06100e, #0d2620, #06100e); }
+    .project-thumb-dev-4 { background: linear-gradient(135deg, #120808, #2c1010, #120808); }
+    .project-thumb-dev-5 { background: linear-gradient(135deg, #0c0c06, #201e08, #0c0c06); }
+    .project-thumb-dev-6 { background: linear-gradient(135deg, #060612, #0d0d2c, #060612); }
+    .mockup-card {
+      padding: 24px;
+      border: var(--border-white);
+      border-radius: 12px;
+      background: var(--dark-2);
+      position: relative;
+      overflow: hidden;
+    }
+    .mockup-bar {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .mockup-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+    }
+    .mockup-screen {
+      border-radius: 6px;
+      aspect-ratio: 16/9;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 12px;
+    }
+    .mockup-line {
+      height: 8px;
+      border-radius: 4px;
+      background: rgba(245,245,245,0.08);
+    }
+    .mockup-line.gold { background: rgba(201,161,74,0.3); }
+    .mockup-line.short { width: 60%; }
+    .mockup-line.shorter { width: 35%; }
+    .mockup-boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 4px; }
+    .mockup-box {
+      height: 40px;
+      border-radius: 4px;
+      background: rgba(245,245,245,0.05);
+      border: 1px solid rgba(245,245,245,0.06);
+    }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="../" class="nav-logo">
-        <img class="logo-vp" src="../assets/images/logo.png" alt="VPtech Logo">
-      </a>
-      <a href="../Contact/" class="nav-cta">Get Started</a>
-      <button class="nav-hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+<canvas id="particles-canvas"></canvas>
 
-  <div class="mobile-menu">
-    <a href="../">Home</a>
-    <a href="../#services">Services</a>
-    <a href="../Contact/">Contact</a>
-    <a href="../Contact/" class="mobile-cta">Get Started</a>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="../" class="nav-logo"><img src="../assets/images/logo.svg" alt="VPtech" /></a>
+    <ul class="nav-links">
+      <li><a href="../" class="nav-link">Home</a></li>
+      <li><a href="../#about" class="nav-link">About</a></li>
+      <li><a href="../#services" class="nav-link">Services</a></li>
+      <li><a href="../#testimonials" class="nav-link">Testimonials</a></li>
+      <li><a href="../Contact/" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="../Contact/" class="btn btn-primary nav-cta">Get Started</a>
+    <button class="hamburger"><span></span><span></span><span></span></button>
   </div>
+</nav>
+<div class="mobile-nav">
+  <a href="../" class="mobile-nav-link">Home</a>
+  <a href="../#about" class="mobile-nav-link">About</a>
+  <a href="../#services" class="mobile-nav-link">Services</a>
+  <a href="../#testimonials" class="mobile-nav-link">Testimonials</a>
+  <a href="../Contact/" class="mobile-nav-link">Contact</a>
+</div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="service-hero-orb"></div>
-    <div class="container">
-      <div class="service-hero-grid">
-        <div class="service-hero-content">
-          <div class="section-label" style="animation: fadeSlideDown 0.8s ease both;">
-            <span class="card-icon" aria-hidden="true" style="margin:0 12px 0 0;vertical-align:middle;">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M6.5 7.25h11c1.243 0 2.25 1.007 2.25 2.25v6c0 1.243-1.007 2.25-2.25 2.25h-11c-1.243 0-2.25-1.007-2.25-2.25v-6c0-1.243 1.007-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M9 20.25h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M9.25 11.1 7.5 12.75l1.75 1.65M14.75 11.1 16.5 12.75l-1.75 1.65" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            Web Development
+<!-- PAGE HERO -->
+<section class="page-hero dev-gradient" style="background-color:var(--black);">
+  <div class="bg-glow bg-glow-gold" style="width:700px;height:500px;top:-100px;left:50%;transform:translateX(-50%);"></div>
+  <div class="hero-grid" style="position:absolute;inset:0;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="hero-badge" style="margin:0 auto 28px;opacity:1;animation:none;">
+      <span class="hero-badge-dot"></span>
+      Service
+    </div>
+    <h1 class="page-hero-title">
+      Modern <span style="color:var(--gold)">Web</span><br>Development
+    </h1>
+    <p class="page-hero-sub">Pixel-perfect, blazing-fast digital products — designed to make your brand undeniable online.</p>
+    <a href="../Contact/" class="btn btn-primary">Start a Project</a>
+  </div>
+</section>
+
+<!-- OVERVIEW + MOCKUP -->
+<section class="section" style="background:var(--dark);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+      <!-- Mockup Visual -->
+      <div class="reveal">
+        <div class="mockup-card" style="border-color:rgba(201,161,74,0.2);">
+          <div class="mockup-bar">
+            <div class="mockup-dot" style="background:#ff5f57;"></div>
+            <div class="mockup-dot" style="background:#febc2e;"></div>
+            <div class="mockup-dot" style="background:#28c840;"></div>
           </div>
-          <h1 style="animation: fadeSlideUp 0.9s 0.1s ease both;">
-            Modern Websites<br>Built for <span style="color:var(--gold);font-style:italic;">Performance</span>
-          </h1>
-          <p style="animation: fadeSlideUp 0.9s 0.25s ease both;">
-            We engineer stunning, high-performance digital experiences that convert visitors into customers. From agency sites to full SaaS products — built to scale.
-          </p>
-          <div style="animation: fadeSlideUp 0.9s 0.4s ease both; display:flex; gap:16px; flex-wrap:wrap;">
-            <a href="../Contact/" class="btn-primary">Build My Site <span class="btn-arrow">→</span></a>
-            <a href="#projects" class="btn-outline">View Work <span class="btn-arrow">→</span></a>
-          </div>
-        </div>
-
-        <!-- Enhanced Development SVG -->
-        <div class="service-hero-visual">
-          <div class="dev-code-display">
-            <div class="code-window">
-              <div class="code-header">
-                <div class="code-dots">
-                  <span class="dot red"></span>
-                  <span class="dot yellow"></span>
-                  <span class="dot green"></span>
-                </div>
-                <div class="code-title">vptech-site.js</div>
-              </div>
-              <div class="code-content">
-                <div class="code-line"><span class="code-keyword">const</span> <span class="code-var">site</span> = <span class="code-punct">{</span></div>
-                <div class="code-line indent"><span class="code-prop">performance</span>: <span class="code-string">'100/100'</span>,</div>
-                <div class="code-line indent"><span class="code-prop">design</span>: <span class="code-string">'premium'</span>,</div>
-                <div class="code-line indent"><span class="code-prop">conversion</span>: <span class="code-string">'optimized'</span>,</div>
-                <div class="code-line indent"><span class="code-prop">status</span>: <span class="code-string">'live'</span> <span class="code-cursor"></span></div>
-                <div class="code-line"><span class="code-punct">};</span></div>
-              </div>
-            </div>
-
-            <!-- Floating tech icons -->
-            <div class="floating-tech-icons">
-              <div class="tech-icon react">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 10.11c1.03 0 1.87.84 1.87 1.89 0 1-.84 1.85-1.87 1.85S10.13 13 10.13 12c0-1.05.84-1.89 1.87-1.89zM7.37 12c0-1.63.66-3.11 1.73-4.19L6.34 5.64c-1.21 1.75-1.95 3.91-1.95 6.36s.74 4.61 1.95 6.36l2.76-2.17c-1.07-1.08-1.73-2.56-1.73-4.19zm9.26 0c0 1.63-.66 3.11-1.73 4.19l2.76 2.17c1.21-1.75 1.95-3.91 1.95-6.36s-.74-4.61-1.95-6.36l-2.76 2.17c1.07 1.08 1.73 2.56 1.73 4.19z" stroke="#61DAFB" stroke-width="1.5"/>
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#61DAFB" opacity="0.3"/>
-                </svg>
-              </div>
-              <div class="tech-icon node">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#339933" stroke-width="1.5"/>
-                </svg>
-              </div>
-              <div class="tech-icon typescript">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="#3178C6" stroke-width="1.5"/>
-                  <text x="12" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3178C6">TS</text>
-                </svg>
-              </div>
+          <div class="mockup-screen" style="background:var(--dark-3);border:var(--border-gold);">
+            <div class="mockup-line gold"></div>
+            <div class="mockup-line short"></div>
+            <div class="mockup-line shorter"></div>
+            <div class="mockup-boxes">
+              <div class="mockup-box" style="background:rgba(201,161,74,0.08);border-color:rgba(201,161,74,0.15);"></div>
+              <div class="mockup-box"></div>
+              <div class="mockup-box"></div>
+              <div class="mockup-box"></div>
             </div>
           </div>
+          <!-- Gradient border effect -->
+          <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);"></div>
+        </div>
+        <!-- Second mockup (mobile) -->
+        <div style="display:flex;gap:16px;margin-top:20px;">
+          <div class="mockup-card" style="flex:1;padding:16px;">
+            <div style="width:32px;height:4px;border-radius:2px;background:var(--gold);opacity:0.5;margin-bottom:12px;"></div>
+            <div class="mockup-line" style="margin-bottom:6px;height:6px;"></div>
+            <div class="mockup-line short" style="height:6px;"></div>
+          </div>
+          <div class="mockup-card" style="flex:1.5;padding:16px;">
+            <div class="mockup-line gold" style="margin-bottom:8px;height:6px;"></div>
+            <div class="mockup-line short" style="margin-bottom:6px;height:5px;"></div>
+            <div class="mockup-line shorter" style="height:5px;"></div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- TECH STRIP -->
-  <div class="tech-strip">
-    <div class="tech-strip-inner">
-      <span class="tech-badge gold">React</span>
-      <span class="tech-badge">Next.js</span>
-      <span class="tech-badge gold">TypeScript</span>
-      <span class="tech-badge">Node.js</span>
-      <span class="tech-badge gold">Tailwind</span>
-      <span class="tech-badge">PostgreSQL</span>
-      <span class="tech-badge gold">Framer Motion</span>
-      <span class="tech-badge">Vercel</span>
-      <span class="tech-badge gold">Figma</span>
-      <span class="tech-badge">AWS</span>
-      <!-- duplicate for seamless loop -->
-      <span class="tech-badge gold">React</span>
-      <span class="tech-badge">Next.js</span>
-      <span class="tech-badge gold">TypeScript</span>
-      <span class="tech-badge">Node.js</span>
-      <span class="tech-badge gold">Tailwind</span>
-      <span class="tech-badge">PostgreSQL</span>
-      <span class="tech-badge gold">Framer Motion</span>
-      <span class="tech-badge">Vercel</span>
-      <span class="tech-badge gold">Figma</span>
-      <span class="tech-badge">AWS</span>
+      <!-- Content -->
+      <div class="reveal reveal-delay-2">
+        <div class="section-label">What We Build</div>
+        <h2 class="section-title">Built for<br>Performance & <span>Impact.</span></h2>
+        <p class="section-subtitle" style="margin-bottom:32px;">Every line of code is written with purpose. We build websites that not only look stunning but convert visitors into customers.</p>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div class="about-feature">
+            <div class="about-icon">📐</div>
+            <div class="about-feature-text">
+              <h4>Custom UI/UX Design</h4>
+              <p>Bespoke interfaces designed from scratch — no templates, no compromises.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-icon">⚡</div>
+            <div class="about-feature-text">
+              <h4>Blazing Performance</h4>
+              <p>Optimised for speed — perfect lighthouse scores and sub-2s load times.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-icon">📱</div>
+            <div class="about-feature-text">
+              <h4>Fully Responsive</h4>
+              <p>Flawless on every device — mobile, tablet, laptop, and widescreen.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-icon">🔒</div>
+            <div class="about-feature-text">
+              <h4>Secure & Scalable</h4>
+              <p>Built to grow with your business, with security baked in from day one.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="divider"></div>
+<!-- TECH STACK -->
+<section class="section" style="background:var(--black);">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 60px;">
+      <div class="section-label">Tech Stack</div>
+      <h2 class="section-title">Technologies We <span>Master</span></h2>
+    </div>
+    <div class="tech-grid reveal">
+      <div class="tech-item"><div class="tech-icon">🌐</div><div class="tech-name">HTML / CSS</div></div>
+      <div class="tech-item"><div class="tech-icon">⚡</div><div class="tech-name">JavaScript</div></div>
+      <div class="tech-item"><div class="tech-icon">⚛️</div><div class="tech-name">React</div></div>
+      <div class="tech-item"><div class="tech-icon">🔷</div><div class="tech-name">Next.js</div></div>
+      <div class="tech-item"><div class="tech-icon">🎨</div><div class="tech-name">Tailwind CSS</div></div>
+      <div class="tech-item"><div class="tech-icon">🗄️</div><div class="tech-name">Node.js</div></div>
+      <div class="tech-item"><div class="tech-icon">🍃</div><div class="tech-name">MongoDB</div></div>
+      <div class="tech-item"><div class="tech-icon">🐘</div><div class="tech-name">PostgreSQL</div></div>
+      <div class="tech-item"><div class="tech-icon">☁️</div><div class="tech-name">Vercel / AWS</div></div>
+      <div class="tech-item"><div class="tech-icon">📝</div><div class="tech-name">WordPress</div></div>
+    </div>
+  </div>
+</section>
 
-  <!-- FEATURES -->
-  <section class="features-section">
-    <div class="container">
-      <div class="section-label reveal">What We Deliver</div>
-      <h2 class="section-title reveal reveal-delay-1">Built to <span>Convert</span></h2>
-      <div class="features-grid">
-        <div class="feature-item reveal">
-          <div class="feature-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M13 2.75 6.5 13.25H12l-1 8 6.5-10.5H12l1-8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h4>Blazing Fast</h4>
-          <p>Core Web Vitals optimised with 95+ Lighthouse scores across performance, accessibility, and SEO.</p>
+<!-- FEATURES -->
+<section class="section" style="background:var(--dark);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
+      <div class="reveal">
+        <div class="section-label">Why VPtech</div>
+        <h2 class="section-title">What Sets Our<br>Websites <span>Apart.</span></h2>
+        <p class="section-subtitle">We don't build generic websites. Every project is crafted with obsessive attention to detail.</p>
+      </div>
+      <div class="features-grid reveal reveal-delay-2">
+        <div class="feature-item">
+          <div class="feature-icon">🎯</div>
+          <div class="feature-title">Conversion-Focused</div>
+          <div class="feature-text">Every design decision serves a purpose — turning visitors into leads and leads into clients.</div>
         </div>
-        <div class="feature-item reveal reveal-delay-1">
-          <div class="feature-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M9 4.75h6A2.25 2.25 0 0 1 17.25 7v10A2.25 2.25 0 0 1 15 19.25H9A2.25 2.25 0 0 1 6.75 17V7A2.25 2.25 0 0 1 9 4.75Z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M10.5 16.75h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h4>Fully Responsive</h4>
-          <p>Pixel-perfect across every screen — mobile, tablet, and desktop — with fluid adaptive layouts.</p>
+        <div class="feature-item">
+          <div class="feature-icon">🔍</div>
+          <div class="feature-title">SEO Optimised</div>
+          <div class="feature-text">Built with semantic HTML, fast load times, and structured data for maximum search visibility.</div>
         </div>
-        <div class="feature-item reveal reveal-delay-2">
-          <div class="feature-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M12 4.75a7.25 7.25 0 1 0 0 14.5h2.25a2 2 0 0 0 0-4H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M8.2 11.2h.01M10.3 8.75h.01M13.7 8.75h.01M15.8 11.2h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h4>Stunning Design</h4>
-          <p>Every UI is custom-crafted with intention — no templates, no compromise, no generic aesthetics.</p>
+        <div class="feature-item">
+          <div class="feature-icon">♿</div>
+          <div class="feature-title">Accessible</div>
+          <div class="feature-text">WCAG-compliant design ensuring your website works beautifully for everyone.</div>
         </div>
-        <div class="feature-item reveal">
-          <div class="feature-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M8.5 11V8.75A3.5 3.5 0 0 1 12 5.25a3.5 3.5 0 0 1 3.5 3.5V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M7.75 11h8.5c1.105 0 2 .895 2 2v4.25c0 1.105-.895 2-2 2h-8.5c-1.105 0-2-.895-2-2V13c0-1.105.895-2 2-2Z" stroke="currentColor" stroke-width="1.5"/>
-            </svg>
-          </div>
-          <h4>Secure & Reliable</h4>
-          <p>Enterprise-grade security, SSL, and uptime monitoring so your site stays live and protected.</p>
-        </div>
-        <div class="feature-item reveal reveal-delay-1">
-          <div class="feature-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M11 18.25a7.25 7.25 0 1 0 0-14.5 7.25 7.25 0 0 0 0 14.5Z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M16.5 16.5 20.25 20.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h4>SEO Optimised</h4>
-          <p>Technical SEO baked in from the start — proper structure, metadata, and performance foundations.</p>
-        </div>
-        <div class="feature-item reveal reveal-delay-2">
-          <div class="feature-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M8.25 15.25c-1.9 0-3.5-1.57-3.5-3.5s1.6-3.5 3.5-3.5c2.25 0 3.5 3.5 3.75 3.75.25-.25 1.5-3.75 3.75-3.75 1.9 0 3.5 1.57 3.5 3.5s-1.6 3.5-3.5 3.5c-2.25 0-3.5-3.5-3.75-3.75-.25.25-1.5 3.75-3.75 3.75Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h4>Scalable</h4>
-          <p>Architecture designed to grow with you — from a landing page to a full SaaS platform.</p>
+        <div class="feature-item">
+          <div class="feature-icon">🔄</div>
+          <div class="feature-title">Easy to Maintain</div>
+          <div class="feature-text">Clean code and CMS integration so you can update your site without a developer.</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="divider"></div>
-
-  <!-- PROJECTS -->
-  <section class="projects" id="projects">
-    <div class="container">
-      <div class="projects-header">
-        <div class="section-label reveal">Portfolio</div>
-        <h2 class="section-title reveal reveal-delay-1">Selected <span>Work</span></h2>
+<!-- WEB PROJECTS -->
+<section class="section" style="background:var(--black);">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 60px;">
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-title">Previous Web <span>Projects</span></h2>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-thumb project-thumb-dev-1">
+          <div class="project-thumb-overlay"><div class="project-thumb-icon">↗</div></div>
+        </div>
+        <div class="project-info">
+          <div class="project-cat">E-Commerce</div>
+          <div class="project-name">Luxe Store — Shopify Redesign</div>
+        </div>
       </div>
-      <div class="projects-filters reveal">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="agency">Agency Sites</button>
-        <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
-        <button class="filter-btn" data-filter="saas">SaaS / Apps</button>
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-thumb project-thumb-dev-2">
+          <div class="project-thumb-overlay"><div class="project-thumb-icon">↗</div></div>
+        </div>
+        <div class="project-info">
+          <div class="project-cat">SaaS Platform</div>
+          <div class="project-name">ScaleOps — Dashboard UI</div>
+        </div>
       </div>
-      <div class="projects-grid">
-
-        <div class="project-card reveal" data-category="agency">
-          <div class="project-thumb thumb-web">
-            <div class="thumb-pattern"></div>
-            <div class="thumb-label">WEB</div>
-            <div class="project-hover-overlay"><span>View Project</span></div>
-          </div>
-          <div class="project-info">
-            <h3>Nexus Creative — Agency Site</h3>
-            <p>Full brand + build, Next.js</p>
-            <span class="project-tag">Agency</span>
-          </div>
+      <div class="project-card reveal reveal-delay-3">
+        <div class="project-thumb project-thumb-dev-3">
+          <div class="project-thumb-overlay"><div class="project-thumb-icon">↗</div></div>
         </div>
-
-        <div class="project-card reveal reveal-delay-1" data-category="ecommerce">
-          <div class="project-thumb thumb-web" style="background: linear-gradient(135deg, #04060a 0%, #060d1a 100%);">
-            <div class="thumb-pattern"></div>
-            <div class="thumb-label">SHOP</div>
-            <div class="project-hover-overlay"><span>View Project</span></div>
-          </div>
-          <div class="project-info">
-            <h3>Lumière — Fashion Store</h3>
-            <p>Premium e-commerce, Shopify headless</p>
-            <span class="project-tag">E-Commerce</span>
-          </div>
+        <div class="project-info">
+          <div class="project-cat">Agency Website</div>
+          <div class="project-name">NovaBrand — Corporate Site</div>
         </div>
-
-        <div class="project-card reveal reveal-delay-2" data-category="saas">
-          <div class="project-thumb thumb-web" style="background: linear-gradient(135deg, #020408 0%, #051020 100%);">
-            <div class="thumb-pattern"></div>
-            <div class="thumb-label">SAAS</div>
-            <div class="project-hover-overlay"><span>View Project</span></div>
-          </div>
-          <div class="project-info">
-            <h3>FlowDesk — SaaS Dashboard</h3>
-            <p>React app with analytics suite</p>
-            <span class="project-tag">SaaS</span>
-          </div>
+      </div>
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-thumb project-thumb-dev-4">
+          <div class="project-thumb-overlay"><div class="project-thumb-icon">↗</div></div>
         </div>
-
-        <div class="project-card reveal" data-category="agency">
-          <div class="project-thumb thumb-web" style="background: linear-gradient(135deg, #060408 0%, #0e0a18 100%);">
-            <div class="thumb-pattern"></div>
-            <div class="thumb-label">SITE</div>
-            <div class="project-hover-overlay"><span>View Project</span></div>
-          </div>
-          <div class="project-info">
-            <h3>Prism Studio — Portfolio</h3>
-            <p>Motion-rich creative portfolio</p>
-            <span class="project-tag">Agency</span>
-          </div>
+        <div class="project-info">
+          <div class="project-cat">Portfolio</div>
+          <div class="project-name">Apex Creative — Portfolio Site</div>
         </div>
-
-        <div class="project-card reveal reveal-delay-1" data-category="saas">
-          <div class="project-thumb thumb-web" style="background: linear-gradient(135deg, #020408 0%, #040e14 100%);">
-            <div class="thumb-pattern"></div>
-            <div class="thumb-label">APP</div>
-            <div class="project-hover-overlay"><span>View Project</span></div>
-          </div>
-          <div class="project-info">
-            <h3>Trackr — Project Manager</h3>
-            <p>Full-stack web application</p>
-            <span class="project-tag">Web App</span>
-          </div>
+      </div>
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-thumb project-thumb-dev-5">
+          <div class="project-thumb-overlay"><div class="project-thumb-icon">↗</div></div>
         </div>
-
-        <div class="project-card reveal reveal-delay-2" data-category="ecommerce">
-          <div class="project-thumb thumb-web" style="background: linear-gradient(135deg, #040408 0%, #0a0818 100%);">
-            <div class="thumb-pattern"></div>
-            <div class="thumb-label">ECOM</div>
-            <div class="project-hover-overlay"><span>View Project</span></div>
-          </div>
-          <div class="project-info">
-            <h3>Obsidian Goods — Store</h3>
-            <p>Dark luxury product store</p>
-            <span class="project-tag">E-Commerce</span>
-          </div>
+        <div class="project-info">
+          <div class="project-cat">Landing Page</div>
+          <div class="project-name">LaunchKit — Product Launch</div>
         </div>
-
+      </div>
+      <div class="project-card reveal reveal-delay-3">
+        <div class="project-thumb project-thumb-dev-6">
+          <div class="project-thumb-overlay"><div class="project-thumb-icon">↗</div></div>
+        </div>
+        <div class="project-info">
+          <div class="project-cat">Web App</div>
+          <div class="project-name">TaskFlow — Productivity App</div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="./" class="nav-logo">
-            <img class="logo-vp" src="../assets/images/logo.png" alt="VPtech Logo">VPtech
-          </a>
-          <p>A premium creative digital agency specialising in video editing, web development and intelligent AI systems.</p>
-          <div class="footer-social">
-            <a href="#" class="social-icon" aria-label="Instagram">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M8 4.75h8A3.25 3.25 0 0 1 19.25 8v8A3.25 3.25 0 0 1 16 19.25H8A3.25 3.25 0 0 1 4.75 16V8A3.25 3.25 0 0 1 8 4.75Z" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M12 15.25A3.25 3.25 0 1 0 12 8.75a3.25 3.25 0 0 0 0 6.5Z" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M16.6 7.4h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-              </svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="LinkedIn">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M6.5 9.75v9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M6.5 6.5h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-                <path d="M10.25 19.25v-6.5c0-1.657 1.093-3 2.75-3s2.75 1.343 2.75 3v6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="WhatsApp">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M12 19.25a7.25 7.25 0 0 0 7.25-7.25A7.25 7.25 0 0 0 12 4.75 7.25 7.25 0 0 0 4.75 12c0 1.25.32 2.42.89 3.44l-.64 3.81 3.78-.67A7.2 7.2 0 0 0 12 19.25Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                <path d="M9.25 10.5c.5 2 2.25 3.75 4.25 4.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </a>
-            <a href="mailto:vptech.growth@gmail.com" class="social-icon" aria-label="Email">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M6.75 7.25h10.5c1.243 0 2.25 1.007 2.25 2.25v7.5c0 1.243-1.007 2.25-2.25 2.25H6.75c-1.243 0-2.25-1.007-2.25-2.25v-7.5c0-1.243 1.007-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M5.25 9l6.1 4.5c.39.29.92.29 1.3 0L18.75 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Pages</h4>
-          <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="../#about">About</a></li>
-            <li><a href="../Contact/">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="../Editing/">Video Editing</a></li>
-            <li><a href="../Development/">Web Development</a></li>
-            <li><a href="../Automations/">AI Automations</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="mailto:vptech.growth@gmail.com">vptech.growth@gmail.com</a></li>
-            <li><a href="../Contact/">Get a Quote</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2025 VPtech. All rights reserved.</p>
-        <p>Crafted with <span>♥</span> for extraordinary brands.</p>
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="bg-glow bg-glow-gold" style="width:800px;height:400px;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+  <div class="container">
+    <div class="cta-banner-inner reveal">
+      <div class="section-label" style="justify-content:center;">Let's Build</div>
+      <h2 class="cta-banner-title">Your Website Should Be<br><span style="color:var(--gold)">Your Best Asset.</span></h2>
+      <p class="cta-banner-sub">Let's build something your competitors will envy.</p>
+      <div class="cta-banner-actions">
+        <a href="../Contact/" class="btn btn-primary">Start Web Project</a>
+        <a href="../" class="btn btn-outline">All Services</a>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="../assets/js/script.js"></script>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><img src="../assets/images/logo.svg" alt="VPtech" /></div>
+        <p class="footer-desc">Premium digital agency — video editing, web development, and AI automations.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" class="social-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links">
+          <li><a href="../Editing/" class="footer-link">Video Editing</a></li>
+          <li><a href="../Development/" class="footer-link">Web Development</a></li>
+          <li><a href="../Automations/" class="footer-link">AI Automations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Company</h4>
+        <ul class="footer-links">
+          <li><a href="../#about" class="footer-link">About</a></li>
+          <li><a href="../Contact/" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@vptech.agency" class="footer-link">hello@vptech.agency</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 <span>VPtech</span>. All rights reserved.</p>
+      <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/script.js"></script>
 </body>
 </html>

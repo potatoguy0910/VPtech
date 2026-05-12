@@ -4,447 +4,410 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Automations — VPtech</title>
-  <meta name="description" content="Intelligent AI automations by VPtech — chatbots, workflow systems, and business intelligence solutions." />
-  <link rel="icon" type="image/png" href="../assets/images/logo0.png">  
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <meta name="description" content="Intelligent AI automation systems by VPtech — workflow automation, AI integrations, and smart business systems." />
   <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <style>
-    .service-hero-orb { background: radial-gradient(circle, rgba(30,160,80,0.08) 0%, rgba(201,161,74,0.06) 50%, transparent 70%); }
-
-    @media (max-width: 1100px) { .service-hero-visual { display: none; } }
-    @media (max-width: 900px) { .service-hero-grid { grid-template-columns: 1fr; gap: 60px; } }
-
-    .node { animation: nodeGlow 3s ease-in-out infinite; }
-    .node:nth-child(2) { animation-delay: 0.5s; }
-    .node:nth-child(3) { animation-delay: 1s; }
-    .node:nth-child(4) { animation-delay: 1.5s; }
-    .node:nth-child(5) { animation-delay: 2s; }
-    @keyframes nodeGlow {
-      0%, 100% { fill: rgba(201,161,74,0.2); }
-      50% { fill: rgba(201,161,74,0.9); }
+    .ai-hero-bg {
+      background: radial-gradient(ellipse 80% 60% at 50% 0%,
+        rgba(120,80,200,0.06) 0%, transparent 55%);
     }
+    .project-thumb-ai-1 { background: linear-gradient(135deg, #0a0614, #180a30, #0a0614); }
+    .project-thumb-ai-2 { background: linear-gradient(135deg, #060d14, #0a1e30, #060d14); }
+    .project-thumb-ai-3 { background: linear-gradient(135deg, #080d06, #141e0a, #080d06); }
+    .project-thumb-ai-4 { background: linear-gradient(135deg, #100608, #281010, #100608); }
+    .project-thumb-ai-5 { background: linear-gradient(135deg, #06100e, #0a2820, #06100e); }
+    .project-thumb-ai-6 { background: linear-gradient(135deg, #0c0a06, #201808, #0c0a06); }
+
+    /* Animated grid bg for hero */
+    .ai-grid-hero {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,161,74,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,161,74,0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+    }
+
+    /* Floating glow dots */
+    .float-dot {
+      position: absolute;
+      border-radius: 50%;
+      animation: floatDot 6s ease-in-out infinite;
+    }
+    @keyframes floatDot {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+      50% { transform: translateY(-20px) scale(1.1); opacity: 1; }
+    }
+
+    /* Node connector diagram */
+    .node-diagram {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 0;
+      align-items: center;
+      padding: 36px;
+      border: var(--border-gold);
+      border-radius: 12px;
+      background: var(--dark-2);
+      position: relative;
+      overflow: hidden;
+    }
+    .node-diagram::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .node-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .node-item {
+      padding: 10px 14px;
+      border: var(--border-white);
+      border-radius: 8px;
+      background: var(--dark-3);
+      font-size: 0.75rem;
+      color: var(--white-dim);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .node-item.gold { border-color: rgba(201,161,74,0.3); color: var(--gold); }
+    .node-center {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--gold-glow);
+      border: 1px solid rgba(201,161,74,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin: 0 20px;
+      flex-shrink: 0;
+      box-shadow: 0 0 30px rgba(201,161,74,0.2);
+    }
+    .node-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="../" class="nav-logo">
-        <img class="logo-vp" src="../assets/images/logo.png" alt="VPtech Logo">
-      </a>
-      <ul class="nav-links">
-        <li><a href="../">Home</a></li>
-        <li><a href="../#about">About</a></li>
-        <li><a href="../#services" class="active">Services</a></li>
-        <li><a href="../#testimonials">Testimonials</a></li>
-        <li><a href="../Contact/">Contact</a></li>
-      </ul>
-      <a href="../Contact/" class="nav-cta">Get Started</a>
-      <button class="nav-hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+<canvas id="particles-canvas"></canvas>
 
-  <div class="mobile-menu">
-    <a href="../">Home</a>
-    <a href="../#about">About</a>
-    <a href="../#services">Services</a>
-    <a href="../#testimonials">Testimonials</a>
-    <a href="../Contact/">Contact</a>
-    <a href="../Contact/" class="mobile-cta">Get Started</a>
+<!-- Float particles -->
+<div class="float-dot" style="width:8px;height:8px;background:var(--gold);top:25%;left:15%;animation-delay:0s;"></div>
+<div class="float-dot" style="width:4px;height:4px;background:var(--gold);top:60%;left:80%;animation-delay:2s;"></div>
+<div class="float-dot" style="width:6px;height:6px;background:rgba(201,161,74,0.5);top:40%;right:25%;animation-delay:1s;"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="../" class="nav-logo"><img src="../assets/images/logo.svg" alt="VPtech" /></a>
+    <ul class="nav-links">
+      <li><a href="../" class="nav-link">Home</a></li>
+      <li><a href="../#about" class="nav-link">About</a></li>
+      <li><a href="../#services" class="nav-link">Services</a></li>
+      <li><a href="../#testimonials" class="nav-link">Testimonials</a></li>
+      <li><a href="../Contact/" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="../Contact/" class="btn btn-primary nav-cta">Get Started</a>
+    <button class="hamburger"><span></span><span></span><span></span></button>
   </div>
+</nav>
+<div class="mobile-nav">
+  <a href="../" class="mobile-nav-link">Home</a>
+  <a href="../#about" class="mobile-nav-link">About</a>
+  <a href="../#services" class="mobile-nav-link">Services</a>
+  <a href="../#testimonials" class="mobile-nav-link">Testimonials</a>
+  <a href="../Contact/" class="mobile-nav-link">Contact</a>
+</div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="service-hero-orb"></div>
-    <div class="container">
-      <div class="service-hero-grid">
-        <div class="service-hero-content">
-          <div class="section-label" style="animation: fadeSlideDown 0.8s ease both;">
-            <span class="card-icon" aria-hidden="true" style="margin:0 12px 0 0;vertical-align:middle;">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M12 3.75v2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M9 6.25h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M7.25 9.25h9.5c1.243 0 2.25 1.007 2.25 2.25v4.75c0 1.243-1.007 2.25-2.25 2.25h-9.5c-1.243 0-2.25-1.007-2.25-2.25V11.5c0-1.243 1.007-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M9.25 13.25h.01M14.75 13.25h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-                <path d="M9.25 16c.7.75 1.7 1.25 2.75 1.25S14.05 16.75 14.75 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            AI Automations
+<!-- PAGE HERO -->
+<section class="page-hero ai-hero-bg" style="background-color:var(--black);">
+  <div class="ai-grid-hero"></div>
+  <div class="bg-glow bg-glow-gold" style="width:700px;height:500px;top:-100px;left:50%;transform:translateX(-50%);"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="hero-badge" style="margin:0 auto 28px;opacity:1;animation:none;">
+      <span class="hero-badge-dot"></span>
+      Service
+    </div>
+    <h1 class="page-hero-title">
+      Intelligent <span style="color:var(--gold)">AI</span><br>Automations
+    </h1>
+    <p class="page-hero-sub">End-to-end automation systems powered by artificial intelligence — built to eliminate repetitive work and scale your business.</p>
+    <a href="../Contact/" class="btn btn-primary">Start Automating</a>
+  </div>
+</section>
+
+<!-- OVERVIEW + NODE DIAGRAM -->
+<section class="section" style="background:var(--dark);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+      <!-- Node Diagram -->
+      <div class="reveal">
+        <div class="node-diagram">
+          <!-- Input Nodes -->
+          <div class="node-col">
+            <div class="node-item"><span class="node-dot"></span>Email Inbox</div>
+            <div class="node-item"><span class="node-dot"></span>CRM Data</div>
+            <div class="node-item"><span class="node-dot"></span>Lead Forms</div>
+            <div class="node-item"><span class="node-dot"></span>Social Media</div>
           </div>
-          <h1 style="animation: fadeSlideUp 0.9s 0.1s ease both;">
-            Automating Businesses<br>with <span style="color:var(--gold);font-style:italic;">Intelligent</span><br>AI Systems
-          </h1>
-          <p style="animation: fadeSlideUp 0.9s 0.25s ease both;">
-            We design and deploy AI-powered systems that handle the repetitive, the complex, and the time-consuming — so you and your team can focus on what actually matters.
-          </p>
-          <div style="animation: fadeSlideUp 0.9s 0.4s ease both; display:flex; gap:16px; flex-wrap:wrap;">
-            <a href="../Contact/" class="btn-primary">Automate My Business <span class="btn-arrow">→</span></a>
-            <a href="#solutions" class="btn-outline">See Solutions <span class="btn-arrow">→</span></a>
+          <!-- AI Core -->
+          <div class="node-center">🤖</div>
+          <!-- Output Nodes -->
+          <div class="node-col">
+            <div class="node-item gold"><span class="node-dot"></span>Auto Replies</div>
+            <div class="node-item gold"><span class="node-dot"></span>Reports</div>
+            <div class="node-item gold"><span class="node-dot"></span>Task Creation</div>
+            <div class="node-item gold"><span class="node-dot"></span>Notifications</div>
           </div>
         </div>
+        <!-- Stats below -->
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:20px;">
+          <div style="text-align:center;padding:20px;border:var(--border-white);border-radius:10px;background:var(--dark-2);">
+            <div style="font-family:var(--font-heading);font-size:1.8rem;font-weight:800;color:var(--gold);">40+</div>
+            <div style="font-size:0.7rem;color:var(--white-dim);">Hrs Saved / Week</div>
+          </div>
+          <div style="text-align:center;padding:20px;border:var(--border-white);border-radius:10px;background:var(--dark-2);">
+            <div style="font-family:var(--font-heading);font-size:1.8rem;font-weight:800;color:var(--gold);">95%</div>
+            <div style="font-size:0.7rem;color:var(--white-dim);">Error Reduction</div>
+          </div>
+          <div style="text-align:center;padding:20px;border:var(--border-white);border-radius:10px;background:var(--dark-2);">
+            <div style="font-family:var(--font-heading);font-size:1.8rem;font-weight:800;color:var(--gold);">24/7</div>
+            <div style="font-size:0.7rem;color:var(--white-dim);">Always On</div>
+          </div>
+        </div>
+      </div>
 
-        <!-- Enhanced Neural Network SVG -->
-        <div class="service-hero-visual">
-          <div class="ai-network-display">
-            <svg width="380" height="300" viewBox="0 0 380 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#C9A14A;stop-opacity:0.2"/>
-                  <stop offset="100%" style="stop-color:#C9A14A;stop-opacity:0.6"/>
-                </linearGradient>
-                <filter id="aiGlow">
-                  <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                  <feMerge>
-                    <feMergeNode in="coloredBlur"/>
-                    <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-                </filter>
-              </defs>
-
-              <!-- Input Layer -->
-              <g class="input-layer">
-                <circle cx="60" cy="80" r="12" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" filter="url(#aiGlow)" class="node"/>
-                <circle cx="60" cy="150" r="12" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" filter="url(#aiGlow)" class="node"/>
-                <circle cx="60" cy="220" r="12" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" filter="url(#aiGlow)" class="node"/>
-                <text x="35" y="270" fill="rgba(201,161,74,0.6)" font-size="10" font-family="monospace">INPUT</text>
-              </g>
-
-              <!-- Hidden Layer 1 -->
-              <g class="hidden-layer-1">
-                <circle cx="150" cy="60" r="10" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" opacity="0.8" class="node"/>
-                <circle cx="150" cy="120" r="10" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" opacity="0.8" class="node"/>
-                <circle cx="150" cy="180" r="10" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" opacity="0.8" class="node"/>
-                <circle cx="150" cy="240" r="10" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" opacity="0.8" class="node"/>
-                <text x="135" y="270" fill="rgba(201,161,74,0.6)" font-size="9" font-family="monospace">HIDDEN</text>
-              </g>
-
-              <!-- Hidden Layer 2 -->
-              <g class="hidden-layer-2">
-                <circle cx="240" cy="90" r="10" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" opacity="0.7" class="node"/>
-                <circle cx="240" cy="150" r="12" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" filter="url(#aiGlow)" class="node"/>
-                <circle cx="240" cy="210" r="10" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" opacity="0.7" class="node"/>
-                <text x="225" y="270" fill="rgba(201,161,74,0.6)" font-size="9" font-family="monospace">CORE</text>
-              </g>
-
-              <!-- Output Layer -->
-              <g class="output-layer">
-                <circle cx="320" cy="120" r="12" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" filter="url(#aiGlow)" class="node"/>
-                <circle cx="320" cy="180" r="12" fill="url(#aiGrad)" stroke="#C9A14A" stroke-width="1.5" filter="url(#aiGlow)" class="node"/>
-                <text x="305" y="270" fill="rgba(201,161,74,0.6)" font-size="9" font-family="monospace">OUTPUT</text>
-              </g>
-
-              <!-- Connections -->
-              <g stroke="#C9A14A" stroke-width="1" opacity="0.4">
-                <!-- Input to Hidden 1 -->
-                <line x1="72" y1="80" x2="140" y2="60"/>
-                <line x1="72" y1="80" x2="140" y2="120"/>
-                <line x1="72" y1="150" x2="140" y2="120"/>
-                <line x1="72" y1="150" x2="140" y2="180"/>
-                <line x1="72" y1="220" x2="140" y2="180"/>
-                <line x1="72" y1="220" x2="140" y2="240"/>
-
-                <!-- Hidden 1 to Hidden 2 -->
-                <line x1="160" y1="60" x2="230" y2="90"/>
-                <line x1="160" y1="120" x2="230" y2="90"/>
-                <line x1="160" y1="120" x2="230" y2="150"/>
-                <line x1="160" y1="180" x2="230" y2="150"/>
-                <line x1="160" y1="180" x2="230" y2="210"/>
-                <line x1="160" y1="240" x2="230" y2="210"/>
-
-                <!-- Hidden 2 to Output -->
-                <line x1="250" y1="90" x2="308" y2="120"/>
-                <line x1="250" y1="150" x2="308" y2="120"/>
-                <line x1="250" y1="150" x2="308" y2="180"/>
-                <line x1="250" y1="210" x2="308" y2="180"/>
-              </g>
-
-              <!-- Data flow particles -->
-              <circle cx="100" cy="100" r="2" fill="#C9A14A" opacity="0.6" class="data-particle"/>
-              <circle cx="200" cy="140" r="1.5" fill="#C9A14A" opacity="0.5" class="data-particle"/>
-              <circle cx="280" cy="160" r="2" fill="#C9A14A" opacity="0.7" class="data-particle"/>
-            </svg>
-
-            <!-- AI Metrics Display -->
-            <div class="ai-metrics">
-              <div class="metric">
-                <div class="metric-value">98%</div>
-                <div class="metric-label">Accuracy</div>
-              </div>
-              <div class="metric">
-                <div class="metric-value">24/7</div>
-                <div class="metric-label">Uptime</div>
-              </div>
+      <!-- Content -->
+      <div class="reveal reveal-delay-2">
+        <div class="section-label">What We Automate</div>
+        <h2 class="section-title">Work Smarter,<br>Not <span>Harder.</span></h2>
+        <p class="section-subtitle" style="margin-bottom:32px;">We design intelligent automation systems that handle your most repetitive tasks — freeing your team to focus on what actually moves the needle.</p>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div class="about-feature">
+            <div class="about-icon">🔄</div>
+            <div class="about-feature-text">
+              <h4>Workflow Automation</h4>
+              <p>Map, design, and automate your entire business workflow — zero manual effort.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-icon">🔗</div>
+            <div class="about-feature-text">
+              <h4>AI Integrations</h4>
+              <p>Connect your existing tools — CRM, email, Slack, and more — with intelligent AI glue.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-icon">💬</div>
+            <div class="about-feature-text">
+              <h4>AI Chatbots</h4>
+              <p>Custom AI assistants trained on your business knowledge — deployed anywhere.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-icon">📊</div>
+            <div class="about-feature-text">
+              <h4>Reporting & Analytics</h4>
+              <p>Automated dashboards and reports delivered to your inbox without lifting a finger.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- STATS ROW -->
-  <div class="stats-row">
-    <div class="container">
-      <div class="stats-row-grid">
-        <div class="stats-row-item">
-          <div class="big" data-target="20" data-suffix="h+">0h+</div>
-          <div class="label">Hours Saved / Week</div>
+<!-- WORKFLOW SHOWCASE -->
+<section class="section" style="background:var(--black);position:relative;overflow:hidden;">
+  <div class="ai-grid-bg"></div>
+  <div class="bg-glow bg-glow-gold" style="width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 64px;">
+      <div class="section-label">Automations We Build</div>
+      <h2 class="section-title">Workflow <span>Solutions</span></h2>
+      <p class="section-subtitle" style="margin:0 auto;">From lead gen to operations — we automate the workflows that matter most.</p>
+    </div>
+
+    <div class="workflow-grid">
+      <div class="workflow-card reveal reveal-delay-1">
+        <div class="workflow-icon">🎯</div>
+        <div class="workflow-title">Lead Generation Automation</div>
+        <div class="workflow-text">Automatically capture, qualify, and route leads from every channel into your CRM.</div>
+        <div class="workflow-steps">
+          <div class="workflow-step"><div class="workflow-step-dot"></div>Capture leads from web, ads, and social</div>
+          <div class="workflow-step"><div class="workflow-step-dot"></div>AI qualifies and scores each lead</div>
+          <div class="workflow-step"><div class="workflow-step-dot"></div>Routes to the right sales rep automatically</div>
         </div>
-        <div class="stats-row-item">
-          <div class="big" data-target="80" data-suffix="%">0%</div>
-          <div class="label">Error Reduction</div>
+      </div>
+
+      <div class="workflow-card reveal reveal-delay-2">
+        <div class="workflow-icon">🏢</div>
+        <div class="workflow-title">CRM Automation</div>
+        <div class="workflow-text">Keep your CRM always up to date — contacts, deals, and follow-ups managed automatically.</div>
+        <div class="workflow-steps">
+          <div class="workflow-step"><div class="workflow-step-dot"></div>Sync contacts across all platforms</div>
+          <div class="workflow-step"><div class="workflow-step-dot"></div>Auto-create tasks and reminders</div>
+          <div class="workflow-step"><div class="workflow-step-dot"></div>Generate weekly pipeline reports</div>
         </div>
-        <div class="stats-row-item">
-          <div class="big" data-target="3" data-suffix="x">0x</div>
-          <div class="label">Faster Operations</div>
+      </div>
+
+      <div class="workflow-card reveal reveal-delay-1">
+        <div class="workflow-icon">💬</div>
+        <div class="workflow-title">AI Chatbot Deployment</div>
+        <div class="workflow-text">Custom AI assistants that answer questions, book appointments, and handle support 24/7.</div>
+        <div class="workflow-steps">
+          <div class="workflow-step"><div class="workflow-step-dot"></div>Trained on your docs and FAQs</div>
+          <div class="workflow-step"><div class="workflow-step-dot"></div>Deployed on web, WhatsApp, or Slack</div>
+          <div class="workflow-step"><div class="workflow-step-dot"></div>Escalates to humans when needed</div>
         </div>
-        <div class="stats-row-item">
-          <div class="big" data-target="100" data-suffix="%">0%</div>
-          <div class="label">Custom Built</div>
+      </div>
+
+      <div class="workflow-card reveal reveal-delay-2">
+        <div class="workflow-icon">📧</div>
+        <div class="workflow-title">Email Automations</div>
+        <div class="workflow-text">Behaviour-triggered email sequences that nurture, convert, and retain your customers at scale.</div>
+        <div class="workflow-steps">
+          <div class="workflow-step"><div class="workflow-step-dot"></div>Trigger-based email sequences</div>
+          <div class="workflow-step"><div class="workflow-step-dot"></div>AI-personalised content per user</div>
+          <div class="workflow-step"><div class="workflow-step-dot"></div>A/B testing and performance reports</div>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="divider"></div>
-
-  <!-- SOLUTIONS -->
-  <section class="solutions" id="solutions">
-    <div class="container">
-      <div class="solutions-header">
-        <div class="section-label reveal">Our Solutions</div>
-        <h2 class="section-title reveal reveal-delay-1">What We <span>Build</span></h2>
-        <p class="section-sub reveal reveal-delay-2" style="margin: 0 auto; text-align:center;">
-          Every automation is purpose-built for your exact workflow — no off-the-shelf tools, no cookie-cutter bots.
-        </p>
+<!-- PREVIOUS PROJECTS -->
+<section class="section" style="background:var(--dark);">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 60px;">
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-title">Automation <span>Projects</span> Delivered</h2>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-thumb project-thumb-ai-1" style="display:flex;align-items:center;justify-content:center;font-size:2rem;">🤖
+          <div class="project-thumb-overlay"><div class="project-thumb-icon">↗</div></div>
+        </div>
+        <div class="project-info">
+          <div class="project-cat">AI Chatbot</div>
+          <div class="project-name">ScaleOps — Support Bot</div>
+        </div>
       </div>
-      <div class="solutions-grid">
-
-        <div class="solution-card reveal">
-          <div class="solution-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M7.25 8.25h9.5c1.243 0 2.25 1.007 2.25 2.25v5c0 1.243-1.007 2.25-2.25 2.25H11l-3.75 2v-2H7.25c-1.243 0-2.25-1.007-2.25-2.25v-5c0-1.243 1.007-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M8.5 11.25h7M8.5 14h4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div>
-            <h3>AI Chatbots</h3>
-            <p>Intelligent, brand-trained chatbots that handle customer enquiries, qualify leads, and book appointments — 24/7, without human intervention.</p>
-          </div>
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-thumb project-thumb-ai-2" style="display:flex;align-items:center;justify-content:center;font-size:2rem;">🔄
+          <div class="project-thumb-overlay"><div class="project-thumb-icon">↗</div></div>
         </div>
-
-        <div class="solution-card reveal reveal-delay-1">
-          <div class="solution-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M12 15.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M19.25 12a7.2 7.2 0 0 0-.09-1.13l2.04-1.57-2-3.46-2.47.93a7.5 7.5 0 0 0-1.96-1.13L14.5 3h-5l-.27 2.64a7.5 7.5 0 0 0-1.96 1.13l-2.47-.93-2 3.46 2.04 1.57A7.2 7.2 0 0 0 4.75 12c0 .38.03.76.09 1.13l-2.04 1.57 2 3.46 2.47-.93c.6.48 1.26.86 1.96 1.13L9.5 21h5l.27-2.64c.7-.27 1.36-.65 1.96-1.13l2.47.93 2-3.46-2.04-1.57c.06-.37.09-.75.09-1.13Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div>
-            <h3>Workflow Automations</h3>
-            <p>End-to-end automation of repetitive business processes — from CRM updates and invoice generation to email sequences and reporting.</p>
-          </div>
+        <div class="project-info">
+          <div class="project-cat">CRM Automation</div>
+          <div class="project-name">Luxe Ventures — Lead Pipeline</div>
         </div>
-
-        <div class="solution-card reveal">
-          <div class="solution-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M5.75 19.25V4.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M5.75 19.25H20.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M9 16.25v-5M12.5 16.25V8.75M16 16.25v-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div>
-            <h3>Business Intelligence</h3>
-            <p>Custom dashboards and automated reporting pipelines that surface the exact insights your team needs, when they need them.</p>
-          </div>
+      </div>
+      <div class="project-card reveal reveal-delay-3">
+        <div class="project-thumb project-thumb-ai-3" style="display:flex;align-items:center;justify-content:center;font-size:2rem;">📧
+          <div class="project-thumb-overlay"><div class="project-thumb-icon">↗</div></div>
         </div>
-
-        <div class="solution-card reveal reveal-delay-1">
-          <div class="solution-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M10 13.5 8.75 14.75a3.25 3.25 0 0 1-4.6-4.6l1.75-1.75a3.25 3.25 0 0 1 4.6 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M14 10.5 15.25 9.25a3.25 3.25 0 1 1 4.6 4.6l-1.75 1.75a3.25 3.25 0 0 1-4.6 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M9.75 12.25 14.25 11.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div>
-            <h3>System Integrations</h3>
-            <p>Seamlessly connect your existing tools — CRM, payment systems, marketing platforms, and databases — into one intelligent, unified ecosystem.</p>
-          </div>
+        <div class="project-info">
+          <div class="project-cat">Email Automation</div>
+          <div class="project-name">NovaBrand — Nurture Sequence</div>
         </div>
-
-        <div class="solution-card reveal">
-          <div class="solution-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M6.75 7.25h10.5c1.243 0 2.25 1.007 2.25 2.25v7.5c0 1.243-1.007 2.25-2.25 2.25H6.75c-1.243 0-2.25-1.007-2.25-2.25v-7.5c0-1.243 1.007-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M5.25 9l6.1 4.5c.39.29.92.29 1.3 0L18.75 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div>
-            <h3>Email & Outreach AI</h3>
-            <p>AI-powered outreach sequences that personalise at scale, follow up intelligently, and book meetings without your team lifting a finger.</p>
-          </div>
+      </div>
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-thumb project-thumb-ai-4" style="display:flex;align-items:center;justify-content:center;font-size:2rem;">🎯
+          <div class="project-thumb-overlay"><div class="project-thumb-icon">↗</div></div>
         </div>
-
-        <div class="solution-card reveal reveal-delay-1">
-          <div class="solution-icon" aria-hidden="true">
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-              <path d="M10.25 6.25a2.5 2.5 0 0 0-2.5 2.5v.25a2.5 2.5 0 0 0-1.5 2.25 2.5 2.5 0 0 0 1.5 2.25v.25a2.5 2.5 0 0 0 2.5 2.5h.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M13.75 6.25a2.5 2.5 0 0 1 2.5 2.5v.25a2.5 2.5 0 0 1 1.5 2.25 2.5 2.5 0 0 1-1.5 2.25v.25a2.5 2.5 0 0 1-2.5 2.5h-.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M12 6v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div>
-            <h3>Custom AI Models</h3>
-            <p>Fine-tuned language models trained on your business data — for internal knowledge bases, document processing, and intelligent decision support.</p>
-          </div>
+        <div class="project-info">
+          <div class="project-cat">Lead Generation</div>
+          <div class="project-name">Apex Gear — Acquisition Funnel</div>
         </div>
-
+      </div>
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-thumb project-thumb-ai-5" style="display:flex;align-items:center;justify-content:center;font-size:2rem;">📊
+          <div class="project-thumb-overlay"><div class="project-thumb-icon">↗</div></div>
+        </div>
+        <div class="project-info">
+          <div class="project-cat">Reporting</div>
+          <div class="project-name">PixelForge — Auto Reporting</div>
+        </div>
+      </div>
+      <div class="project-card reveal reveal-delay-3">
+        <div class="project-thumb project-thumb-ai-6" style="display:flex;align-items:center;justify-content:center;font-size:2rem;">⚙️
+          <div class="project-thumb-overlay"><div class="project-thumb-icon">↗</div></div>
+        </div>
+        <div class="project-info">
+          <div class="project-cat">Full Workflow</div>
+          <div class="project-name">TaskFlow — End-to-End Ops</div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="divider"></div>
-
-  <!-- PROJECTS SECTION -->
-  <section class="projects" id="projects" style="background: var(--black);">
-    <div class="container">
-      <div class="projects-header">
-        <div class="section-label reveal">Case Studies</div>
-        <h2 class="section-title reveal reveal-delay-1">Results That <span>Speak</span></h2>
-      </div>
-      <div class="projects-grid two-col">
-
-        <div class="project-card reveal" data-category="chatbot">
-          <div class="project-thumb thumb-ai" style="height: 260px;">
-            <div class="thumb-pattern"></div>
-            <div class="thumb-label">AI CHAT</div>
-            <div class="project-hover-overlay"><span>View Case Study</span></div>
-          </div>
-          <div class="project-info">
-            <h3>Scale Labs — Lead Qualifier Bot</h3>
-            <p>Automated 60% of inbound lead qualification — 340 hours saved in Q1 alone.</p>
-            <span class="project-tag">AI Chatbot</span>
-          </div>
-        </div>
-
-        <div class="project-card reveal reveal-delay-1" data-category="workflow">
-          <div class="project-thumb thumb-ai" style="height: 260px; background: linear-gradient(135deg, #020606 0%, #061210 100%);">
-            <div class="thumb-pattern"></div>
-            <div class="thumb-label">WORKFLOW</div>
-            <div class="project-hover-overlay"><span>View Case Study</span></div>
-          </div>
-          <div class="project-info">
-            <h3>Apex Commerce — Order Automation</h3>
-            <p>Full order processing pipeline automation — 99.9% error reduction and 5× faster fulfilment.</p>
-            <span class="project-tag">Workflow</span>
-          </div>
-        </div>
-
-        <div class="project-card reveal" data-category="integration">
-          <div class="project-thumb thumb-ai" style="background: linear-gradient(135deg, #040408 0%, #080c10 100%);">
-            <div class="thumb-pattern"></div>
-            <div class="thumb-label">INTEGRATION</div>
-            <div class="project-hover-overlay"><span>View Case Study</span></div>
-          </div>
-          <div class="project-info">
-            <h3>FlowDesk — CRM Sync System</h3>
-            <p>Real-time sync between HubSpot, Stripe, and Notion — zero manual data entry.</p>
-            <span class="project-tag">Integration</span>
-          </div>
-        </div>
-
-        <div class="project-card reveal reveal-delay-1" data-category="chatbot">
-          <div class="project-thumb thumb-ai" style="background: linear-gradient(135deg, #040608 0%, #06100c 100%);">
-            <div class="thumb-pattern"></div>
-            <div class="thumb-label">AI AGENT</div>
-            <div class="project-hover-overlay"><span>View Case Study</span></div>
-          </div>
-          <div class="project-info">
-            <h3>Bloom Brands — Support AI Agent</h3>
-            <p>24/7 intelligent support handling 80% of tickets with no human needed.</p>
-            <span class="project-tag">AI Agent</span>
-          </div>
-        </div>
-
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="bg-glow bg-glow-gold" style="width:800px;height:400px;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+  <div class="container">
+    <div class="cta-banner-inner reveal">
+      <div class="section-label" style="justify-content:center;">Start Automating</div>
+      <h2 class="cta-banner-title">Let AI Handle the<br><span style="color:var(--gold)">Heavy Lifting.</span></h2>
+      <p class="cta-banner-sub">Free your team. Scale your business. Sleep better.</p>
+      <div class="cta-banner-actions">
+        <a href="../Contact/" class="btn btn-primary">Start Automation Project</a>
+        <a href="../" class="btn btn-outline">All Services</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="./" class="nav-logo">
-            <img class="logo-vp" src="../assets/images/logo.png" alt="VPtech Logo">VPtech
-          </a>
-          <p>A premium creative digital agency specialising in video editing, web development and intelligent AI systems.</p>
-          <div class="footer-social">
-            <a href="#" class="social-icon" aria-label="Instagram">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M8 4.75h8A3.25 3.25 0 0 1 19.25 8v8A3.25 3.25 0 0 1 16 19.25H8A3.25 3.25 0 0 1 4.75 16V8A3.25 3.25 0 0 1 8 4.75Z" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M12 15.25A3.25 3.25 0 1 0 12 8.75a3.25 3.25 0 0 0 0 6.5Z" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M16.6 7.4h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-              </svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="LinkedIn">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M6.5 9.75v9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M6.5 6.5h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-                <path d="M10.25 19.25v-6.5c0-1.657 1.093-3 2.75-3s2.75 1.343 2.75 3v6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="WhatsApp">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M12 19.25a7.25 7.25 0 0 0 7.25-7.25A7.25 7.25 0 0 0 12 4.75 7.25 7.25 0 0 0 4.75 12c0 1.25.32 2.42.89 3.44l-.64 3.81 3.78-.67A7.2 7.2 0 0 0 12 19.25Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                <path d="M9.25 10.5c.5 2 2.25 3.75 4.25 4.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </a>
-            <a href="mailto:vptech.growth@gmail.com" class="social-icon" aria-label="Email">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M6.75 7.25h10.5c1.243 0 2.25 1.007 2.25 2.25v7.5c0 1.243-1.007 2.25-2.25 2.25H6.75c-1.243 0-2.25-1.007-2.25-2.25v-7.5c0-1.243 1.007-2.25 2.25-2.25Z" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M5.25 9l6.1 4.5c.39.29.92.29 1.3 0L18.75 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Pages</h4>
-          <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="../#about">About</a></li>
-            <li><a href="../Contact/">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="../Editing/">Video Editing</a></li>
-            <li><a href="../Development/">Web Development</a></li>
-            <li><a href="../Automations/">AI Automations</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="mailto:vptech.growth@gmail.com">vptech.growth@gmail.com</a></li>
-            <li><a href="../Contact/">Get a Quote</a></li>
-          </ul>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><img src="../assets/images/logo.svg" alt="VPtech" /></div>
+        <p class="footer-desc">Premium digital agency — video editing, web development, and AI automations.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" class="social-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>© 2026 <span>VPtech</span>. All rights reserved.</p>
-        <p>Crafted with <span>♥</span> for extraordinary brands.</p>
+      <div>
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links">
+          <li><a href="../Editing/" class="footer-link">Video Editing</a></li>
+          <li><a href="../Development/" class="footer-link">Web Development</a></li>
+          <li><a href="../Automations/" class="footer-link">AI Automations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Company</h4>
+        <ul class="footer-links">
+          <li><a href="../#about" class="footer-link">About</a></li>
+          <li><a href="../Contact/" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@vptech.agency" class="footer-link">hello@vptech.agency</a></li>
+        </ul>
       </div>
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 <span>VPtech</span>. All rights reserved.</p>
+      <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
+    </div>
+  </div>
+</footer>
 
-  <script src="../assets/js/script.js"></script>
+<script src="../assets/js/script.js"></script>
 </body>
 </html>
