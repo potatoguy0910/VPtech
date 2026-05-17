@@ -269,6 +269,8 @@ img {
   gap: 5px;
   cursor: pointer;
   padding: 4px;
+  background: var(--black);
+  outline: none;
 }
 
 .hamburger span {
@@ -1179,7 +1181,6 @@ img {
 }
 
 .project-thumb {
-  aspect-ratio: 16/9;
   background: var(--dark-3);
   position: relative;
   overflow: hidden;
@@ -1663,7 +1664,7 @@ img {
 
 @media (max-width: 640px) {
   html{ zoom: 75%; scrollbar-width: none; }
-  .hero{zoom:100%; }
+  .hero, .navbar{zoom:100%; }
   .services-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
   .tech-grid { grid-template-columns: repeat(3, 1fr); }
